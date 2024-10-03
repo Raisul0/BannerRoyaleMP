@@ -40,11 +40,20 @@
     <Reference Include="TaleWorlds.Core">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.Core.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.Core.ViewModelCollection">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Core.ViewModelCollection.dll</HintPath>
+    </Reference>
     <Reference Include="TaleWorlds.DotNet">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.DotNet.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.Engine">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.Engine.dll</HintPath>
+    </Reference>
     <Reference Include="TaleWorlds.Library">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.Localization">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.Localization.dll</HintPath>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.dll</HintPath>
@@ -55,16 +64,32 @@
     <Reference Include="TaleWorlds.MountAndBlade.Multiplayer">
       <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.MountAndBlade.Multiplayer.dll</HintPath>
     </Reference>
-    <Reference Include="TaleWorlds.ObjectSystem">
-      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.ObjectSystem.dll</HintPath>
+    <Reference Include="TaleWorlds.MountAndBlade.View">
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Native\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.View.dll</HintPath>
     </Reference>
+    <Reference Include="TaleWorlds.ObjectSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.ObjectSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="TaleWorlds.PlayerServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllItems.cs" />
+    <Compile Include="BannerRoyalInventoryVM.cs" />
+    <Compile Include="BannerRoyalItemObjectVM.cs" />
+    <Compile Include="BannerRoyalMovies.cs" />
     <Compile Include="BannerRoyalMPGameMode.cs" />
     <Compile Include="BannerRoyalMPCommonBehavior.cs" />
+    <Compile Include="ButtonObjectListVM.cs" />
+    <Compile Include="ButtonObjectVM.cs" />
+    <Compile Include="GameDictionaries.cs" />
+    <Compile Include="GenericVM.cs" />
+    <Compile Include="ItemTiers.cs" />
+    <Compile Include="LootChest.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpawnHelper.cs" />
+    <Compile Include="ViewModelLib.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BannerRoyalMPLib;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;
@@ -28,7 +29,7 @@ namespace BannerRoyalMPClient
                 ViewCreator.CreateOptionsUIHandler(),
                 ViewCreator.CreateMissionMainAgentEquipDropView(mission),
                 ViewCreator.CreateMissionBoundaryCrossingView(),
-                new MissionBoundaryWallView()
+                new MissionBoundaryWallView(),
             };
             return missionViews.ToArray();
         }

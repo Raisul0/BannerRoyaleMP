@@ -132,11 +132,9 @@ namespace BannerRoyalMPLib
 
 				component.SpawnCountThisRound++;
 
-				
-			}
+            }
 			catch (Exception ex)
 			{
-
 			}
 		}
 
@@ -224,7 +222,6 @@ namespace BannerRoyalMPLib
 			return agentBuildData2.AgentBodyProperties;
 		}
 		
-
 		// Return a linear troop cost from minCost to MaxCost, depending on TroopMultiplie
 
 		/// <summary>

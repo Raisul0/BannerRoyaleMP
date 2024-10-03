@@ -123,6 +123,7 @@ namespace BannerRoyalMPServer
                     //}
                     SpawnHelper.SpawnPlayer(peer, onSpawnPerkHandler, basicCharacterObject, alternativeEquipment: useAltEquipement ? _altEquipment : null, customCulture: culture, mortalityState: MortalityState.Invulnerable);
                     playersSpawn++;
+
                 }
                 if (playersSpawn >= 20) break;
             }

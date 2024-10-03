@@ -28,7 +28,7 @@ namespace BannerRoyalMPServer
                         
                         new MultiplayerTimerComponent(),
                         new SpawnComponent(new BannerRoyalMPSpawnFrameBehavior(),
-                            new BannerRoyalMPSpawningBehavior()),
+                        new BannerRoyalMPSpawningBehavior()),
                         new AgentHumanAILogic(),
                         new MissionLobbyEquipmentNetworkComponent(),
                         new MissionHardBorderPlacer(),
@@ -37,7 +37,8 @@ namespace BannerRoyalMPServer
                         new MultiplayerPollComponent(),
                         new MultiplayerGameNotificationsComponent(),
                         new MissionOptionsComponent(),
-                        new MissionScoreboardComponent(new TDMScoreboardData())
+                        new MissionScoreboardComponent(new TDMScoreboardData()),
+                        new SpawnChestLogic(),
                     };
                 }, true, true);
 
