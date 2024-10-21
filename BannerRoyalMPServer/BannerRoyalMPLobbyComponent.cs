@@ -6,7 +6,7 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.DedicatedCustomServer;
 using TaleWorlds.MountAndBlade.Diamond;
 
-namespace Alliance.Server.Patch.Behaviors
+namespace BannerRoyalMPServer
 {
     public class BannerRoyalMPLobbyComponent : MissionCustomGameServerComponent
     {

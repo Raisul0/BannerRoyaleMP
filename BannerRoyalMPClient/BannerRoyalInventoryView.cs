@@ -1,4 +1,5 @@
 ﻿using BannerRoyalMPLib;
+using BannerRoyalMPLib.NetworkMessages;
 using System.Linq;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.GauntletUI.Data;
@@ -120,6 +121,17 @@ namespace BannerRoyalMPClient
                 var distance2 = (e2.GameEntity.GlobalPosition - heroPos).LengthSquared;
                 return distance1.CompareTo(distance2);
             });
+
+            if (GameNetwork.IsClient)
+            {
+
+                GameNetwork.BeginModuleEventAsClient();
+                GameNetwork.WriteMessage(new StartEquipItem());
+                GameNetwork.BeginModuleEventAsClient();
+
+            }
+
+
 
             // Get the closest entity
             var closestEntity = chests.FirstOrDefault();

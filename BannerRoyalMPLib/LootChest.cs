@@ -1,4 +1,6 @@
-﻿using TaleWorlds.Core;
+﻿using BannerRoyalMPLib;
+using BannerRoyalMPLib.Globals;
+using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
@@ -25,9 +27,10 @@ namespace BannerRoyalMPLib
         protected override void OnInit()
         {
             base.OnInit();
-            base.Id = new MissionObjectId(1010101,true);
-            _inventoryVM = new BannerRoyalInventoryVM(Mission.Current);
             base.GameEntity.Name = "LootChest";
+            var inventoryVm = new BannerRoyalInventoryVM(Mission.Current);
+            inventoryVm.SetChestItems(LootPools.TestPool());
+            SetViewModel(inventoryVm);
         }
 
         public override ScriptComponentBehavior.TickRequirement GetTickRequirement()

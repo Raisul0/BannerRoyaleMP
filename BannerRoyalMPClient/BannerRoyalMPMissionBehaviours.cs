@@ -25,7 +25,6 @@ namespace BannerRoyalMPClient
                     new BannerRoyalMPCommonBehavior(),
                     new BannerRoyalMPVisualSpawnComponent(),
 
-
                     // Native behaviors
                     new MultiplayerTimerComponent(),
                     new MultiplayerMissionAgentVisualSpawnComponent(),
@@ -36,8 +35,7 @@ namespace BannerRoyalMPClient
                     new MultiplayerPollComponent(),
                     new MultiplayerGameNotificationsComponent(),
                     new MissionOptionsComponent(),
-                    new MissionScoreboardComponent(new TDMScoreboardData()),
-
+                    new MissionScoreboardComponent(new FFAScoreboardData()),
                 };
             }, true, true);
         }

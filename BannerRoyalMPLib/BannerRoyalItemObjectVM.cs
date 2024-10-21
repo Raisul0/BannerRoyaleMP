@@ -1,10 +1,10 @@
-﻿using BannerRoyalMPLib;
-using System;
+﻿using System;
+using BannerRoyalMPLib.Globals;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using TaleWorlds.ObjectSystem;
+using BannerRoyalMPLib.NetworkMessages;
 
 namespace BannerRoyalMPLib
 {
@@ -15,23 +15,17 @@ namespace BannerRoyalMPLib
             this.Object = null;
             Name = "No Item";
             ImageIdentifier = null;
-            this._tier = new ItemTier();
+            this._tier = ItemTiers.Common;
             ItemWidgetType = "Inventory";
         }
 
-        public BannerRoyalItemObjectVM(string itemId,string tierName)
+        public BannerRoyalItemObjectVM(ItemObject item, ItemTiers tier)
         {
-            this.Object = AllItems.GetItemFromStringId(itemId);
-            SetItemInfo(this.Object);
-            this._tier = new ItemTier(tierName);
-        }
-
-        public BannerRoyalItemObjectVM(ItemObject itemObject,ItemTier tier)
-        {
-            this.Object = itemObject;
+            this.Object = item;
             SetItemInfo(this.Object);
             this._tier = tier;
         }
+
 
         protected void SetItemInfo(ItemObject item)
         {
@@ -100,12 +94,7 @@ namespace BannerRoyalMPLib
         {
             get
             {
-                return this._tier.TierName;
-            }
-            set
-            {
-                this._tier.TierName = value;
-                base.OnPropertyChangedWithValue<string>(value, "TierName");
+                return this._tier.ToString();
             }
         }
 
@@ -114,12 +103,8 @@ namespace BannerRoyalMPLib
         {
             get
             {
-                return this._tier.TierColor;
-            }
-            set
-            {
-                this._tier.TierColor = value;
-                base.OnPropertyChangedWithValue<string>(value, "TierColor");
+                ItemTierInfo.ItemTierColors.TryGetValue(_tier, out string value);
+                return value;
             }
         }
 
@@ -158,10 +143,10 @@ namespace BannerRoyalMPLib
         {
             var result = "";
 
-            if(this.Object != null)
+            if (this.Object != null)
             {
-                result += @"Name   : " + this.Object.Name + "\n"+
-                          @"Weight : " + this.Object.Weight + "\n"+
+                result += @"Name   : " + this.Object.Name + "\n" +
+                          @"Weight : " + this.Object.Weight + "\n" +
                           @"Type   : " + this.Object.ItemType;
             }
             else
@@ -174,16 +159,12 @@ namespace BannerRoyalMPLib
         public void ExecuteEquipItem()
         {
 
-            if (this.Object != null)
-            {
-                var index = ViewModelLib.GetItemEquipmentIndex(Object);
-                var missionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
-                Equipment equipment = missionPeer.ControlledAgent.SpawnEquipment;
-                equipment[index] = new EquipmentElement(this.Object);
+            var peer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
 
-
-
-            }
+            GameNetwork.BeginModuleEventAsClient();
+            GameNetwork.WriteMessage(new StartEquipItem());
+            //GameNetwork.WriteMessage(new StartEquipItem(this.Object, peer));
+            GameNetwork.BeginModuleEventAsClient();
 
         }
 
@@ -199,9 +180,9 @@ namespace BannerRoyalMPLib
         public void ExecuteBeginHint()
         {
 
-            this.ObjectStatTooltip = new BasicTooltipViewModel(() =>  this.GetItemStats());
+            this.ObjectStatTooltip = new BasicTooltipViewModel(() => this.GetItemStats());
             this.ObjectStatTooltip.ExecuteBeginHint();
-            
+
         }
         public void ExecuteEndHint()
         {
@@ -214,7 +195,7 @@ namespace BannerRoyalMPLib
         private ItemObject _object;
         private Action<BannerRoyalItemObjectVM> onObjectSelected;
         private Action<BannerRoyalItemObjectVM> onObjectHover;
-        private ItemTier _tier; 
+        private ItemTiers _tier;
         private string _objectStatTooltipString = "";
         private string _itemWidgetType;
         private BasicTooltipViewModel _objectStatTooltip;

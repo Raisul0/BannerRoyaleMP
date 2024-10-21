@@ -11,16 +11,12 @@
 		<SubModule>
 			<Name value="BannerRoyalMPLib" />
 			<DLLName value="BannerRoyalMPLib.dll" />
-			<SubModuleClassType value="BannerRoyalMPLib.Main" />
-			<Tags>
-				<Tag key="DedicatedServerType" value="none" />
-				<Tag key="IsNoRenderModeElement" value="false" />
-			</Tags>
+			<SubModuleClassType value="BannerRoyalMPLib.SubModule" />
 		</SubModule>
 		<SubModule>
 			<Name value="BannerRoyalMP"/>
 			<DLLName value="BannerRoyalMPClient.dll"/>
-			<SubModuleClassType value="BannerRoyalMPClient.BannerRoyalMPClientSubModule"/>
+			<SubModuleClassType value="BannerRoyalMPClient.SubModule"/>
 		</SubModule>
 	</SubModules>
 	<Xmls>

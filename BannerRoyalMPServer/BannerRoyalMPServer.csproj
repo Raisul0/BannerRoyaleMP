@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
@@ -9,6 +9,10 @@
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <OutputPath>..\Client Files\bin\Win64_Shipping_Server\</OutputPath>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BannerRoyalMPLib\BannerRoyalMPLib.csproj" />
+    </ItemGroup>
 
     <ItemGroup>
       <Reference Include="TaleWorlds.AchievementSystem">
@@ -122,10 +126,6 @@
       <Reference Include="TaleWorlds.Starter.Library">
         <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.Starter.Library.dll</HintPath>
       </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\BannerRoyalMPLib\BannerRoyalMPLib.csproj" />
     </ItemGroup>
 
 </Project>

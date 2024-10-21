@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using BannerRoyalMPLib;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.View.MissionViews;
 using TaleWorlds.MountAndBlade.View;

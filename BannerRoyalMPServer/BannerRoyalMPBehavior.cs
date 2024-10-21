@@ -1,17 +1,22 @@
 ﻿
+using BannerRoyalMPLib;
+using BannerRoyalMPLib.Globals;
+using BannerRoyalMPLib.ObjectClasses;
 using BannerRoyalMPServer;
 using NetworkMessages.FromServer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using TaleWorlds.Core;
 using TaleWorlds.Engine;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Network.Messages;
 using TaleWorlds.ObjectSystem;
 using MathF = TaleWorlds.Library.MathF;
 
-namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
+namespace BannerRoyalMPServer
 {
     public class BannerRoyalMPBehavior : MissionMultiplayerGameModeBase
     {
@@ -52,6 +57,7 @@ namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
         {
             base.OnBehaviorInitialize();
             spawnBehavior = (BannerRoyalMPSpawningBehavior)SpawnComponent.SpawningBehavior;
+
         }
 
         public override void AfterStart()
@@ -68,7 +74,6 @@ namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
             component.Team = Mission.AttackerTeam;
             component.Culture = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions));
         }
-
         public override void OnMissionTick(float dt)
         {
             base.OnMissionTick(dt);
@@ -80,6 +85,7 @@ namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
             }
             if (_spawnStarted && spawnBehavior.SpawnEnded && !_gameEnded)
             {
+
                 if (!_zoneInitialized)
                 {
                     InitShrinkingZone();
@@ -93,20 +99,23 @@ namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
         private void CheckForGameEnd()
         {
             List<Agent> remainingAgents = Mission.Current.Agents.FindAll(agent => agent.IsHuman && agent.Health > 0);
-            if (remainingAgents.Count <= 1)
-            {
-                if (remainingAgents.Count == 1)
-                {
-                    Agent winner = remainingAgents.FirstOrDefault();
-                    string winMessage = $"{winner.Name} is the last surviving participant. GG !";
-                }
-                else
-                {
-                    string loseMessage = $"Nobody survived... How is that even possible ?";
-                }
-                GameModeStarter.Instance.StartLobby("Lobby", MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(), MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
-                _gameEnded = true;
-            }
+
+            //For Testing Purpose Keep the Game Running 
+
+            //if (remainingAgents.Count <= 1)
+            //{
+            //    if (remainingAgents.Count == 1)
+            //    {
+            //        Agent winner = remainingAgents.FirstOrDefault();
+            //        string winMessage = $"{winner.Name} is the last surviving participant. GG !";
+            //    }
+            //    else
+            //    {
+            //        string loseMessage = $"Nobody survived... How is that even possible ?";
+            //    }
+            //    GameModeStarter.Instance.StartLobby("Lobby", MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(), MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
+            //    _gameEnded = true;
+            //}
         }
 
         private void DamageAgentsOutsideZone(float dt)
@@ -185,7 +194,7 @@ namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
 
         private bool EnoughPlayersJoined()
         {
-            int minPlayersForStart = (int)MathF.Clamp((float)Math.Round(GameNetwork.NetworkPeers.Count / 1.1), 1, Math.Max(GameNetwork.NetworkPeers.Count - 1, 1));
+            int minPlayersForStart = 1;//(int)MathF.Clamp((float)Math.Round(GameNetwork.NetworkPeers.Count / 1.1), 1, Math.Max(GameNetwork.NetworkPeers.Count - 1, 1));
             int playersReady = 0;
             foreach (ICommunicator peer in GameNetwork.NetworkPeers)
             {
@@ -197,6 +206,7 @@ namespace Alliance.Server.GameModes.BattleRoyale.Behaviors
             GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
             return playersReady >= minPlayersForStart;
         }
+
 
         public BannerRoyalMPBehavior()
         {

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Numerics;
 using System.Collections.Generic;
 using TaleWorlds.GauntletUI;
 using TaleWorlds.GauntletUI.BaseTypes;
-using TaleWorlds.Library;
-using TaleWorlds.Core;
 using System.Linq;
-using System.Data.SqlTypes;
-using BannerRoyalMPLib;
-using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.GauntletUI.Widgets.Inventory;
 
 namespace BannerRoyalMPClient
@@ -40,10 +34,7 @@ namespace BannerRoyalMPClient
 
             if (this.WidgetType == draggedWidget.WidgetType || this.WidgetType == "Inventory")
             {
-                GameDictionaries.playerInventory.Add(GameNetwork.MyPeer.UserName ,);
-                
-                
-                
+                   
                 var currentMainWidget = this.Children.FirstOrDefault(x => x.Id == "MainWidget");
                 if (draggedWidget != null)
                 {

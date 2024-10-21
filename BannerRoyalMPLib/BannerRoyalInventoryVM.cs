@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using BannerRoyalMPLib.Globals;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 
@@ -14,7 +17,6 @@ namespace BannerRoyalMPLib
             _isLootBoxFocused = false;
 
             SetInventoryItems();
-            SetLootItems();
         }
 
         private void SetInventoryItems()
@@ -37,34 +39,54 @@ namespace BannerRoyalMPLib
             this.InventoryItems = _inventoryItems;
         }
 
-        private void SetLootItems()
+        public void SetChestItems(List<Tuple<string, ItemObject, ItemTiers>> items)
         {
-
-            TimeSpan t = (DateTime.UtcNow - new DateTime(1900, 1, 1));
-            int timestamp = (int)t.TotalSeconds;
-            Random ran = new Random(timestamp);
-
-
             var _topRowItems = new MBBindingList<BannerRoyalItemObjectVM>();
-            foreach (var topRowItem in AllItems.GetAnyNoOfWeaponAndArmor(6))
-            {
-                var randomNo = ran.Next();
-                var tierNo = randomNo % 3 + 1;
-                _topRowItems.Add(new BannerRoyalItemObjectVM(topRowItem, new ItemTier(tierNo)));
-            }
-            this.ChestItemsTopRow = _topRowItems;
-
             var _bottomRowItems = new MBBindingList<BannerRoyalItemObjectVM>();
-            foreach (var bottomRowItem in AllItems.GetAnyNoOfWeaponAndArmor(6))
+
+            var topItems = items.GetRange(0, 6);
+            var bottomItems = items.GetRange(6, 6);
+
+            topItems.ForEach(x =>
             {
-                var randomNo = ran.Next();
-                var tierNo = randomNo % 3 + 1;
-                _bottomRowItems.Add(new BannerRoyalItemObjectVM(bottomRowItem, new ItemTier(tierNo)));
-
-            }
+                _topRowItems.Add((new BannerRoyalItemObjectVM(x.Item2, x.Item3)));
+            });
+            this.ChestItemsTopRow = _topRowItems;
+            bottomItems.ForEach(x =>
+            {
+                _bottomRowItems.Add((new BannerRoyalItemObjectVM(x.Item2, x.Item3)));
+            });
             this.ChestItemsBottomRow = _bottomRowItems;
-
         }
+
+        // private void SetLootItems()
+        // {
+        //
+        //     TimeSpan t = (DateTime.UtcNow - new DateTime(1900, 1, 1));
+        //     int timestamp = (int)t.TotalSeconds;
+        //     Random ran = new Random(timestamp);
+        //
+        //
+        //     var _topRowItems = new MBBindingList<BannerRoyalItemObjectVM>();
+        //     foreach (var topRowItem in AllItems.GetAnyNoOfWeaponAndArmor(6))
+        //     {
+        //         var randomNo = ran.Next();
+        //         var tierNo = randomNo % 3 + 1;
+        //         _topRowItems.Add(new BannerRoyalItemObjectVM(topRowItem, new ItemTier(tierNo)));
+        //     }
+        //     this.ChestItemsTopRow = _topRowItems;
+        //
+        //     var _bottomRowItems = new MBBindingList<BannerRoyalItemObjectVM>();
+        //     foreach (var bottomRowItem in AllItems.GetAnyNoOfWeaponAndArmor(6))
+        //     {
+        //         var randomNo = ran.Next();
+        //         var tierNo = randomNo % 3 + 1;
+        //         _bottomRowItems.Add(new BannerRoyalItemObjectVM(bottomRowItem, new ItemTier(tierNo)));
+        //
+        //     }
+        //     this.ChestItemsBottomRow = _bottomRowItems;
+        //
+        // }
 
         private void OnItemHover(BannerRoyalItemObjectVM item)
         {
