@@ -122,17 +122,6 @@ namespace BannerRoyalMPClient
                 return distance1.CompareTo(distance2);
             });
 
-            if (GameNetwork.IsClient)
-            {
-
-                GameNetwork.BeginModuleEventAsClient();
-                GameNetwork.WriteMessage(new StartEquipItem());
-                GameNetwork.BeginModuleEventAsClient();
-
-            }
-
-
-
             // Get the closest entity
             var closestEntity = chests.FirstOrDefault();
             return closestEntity._inventoryVM;

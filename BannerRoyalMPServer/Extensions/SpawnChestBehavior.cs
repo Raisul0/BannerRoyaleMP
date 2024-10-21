@@ -65,15 +65,17 @@ namespace BannerRoyalMPServer.Extensions
 
         }
 
-        public bool EquipSelectedItem(NetworkCommunicator networkPeer, GameNetworkMessage baseMessage)
+        public bool EquipSelectedItem(NetworkCommunicator networkPeer, StartEquipItem baseMessage)
         {
-            var peer = new MissionPeer(); //startEquipItem.Peer;
-            var item = new ItemObject();// startEquipItem.Item;
+            var peer = baseMessage.Player;
+            var item = baseMessage.Item;
 
             var currentEquipment = peer.ControlledAgent.SpawnEquipment;
             var index = ViewModelLib.GetItemEquipmentIndex(item);
             currentEquipment[index] = new EquipmentElement(item);
             peer.ControlledAgent.UpdateSpawnEquipmentAndRefreshVisuals(currentEquipment);
+
+            Debug.Print("Equiping Selected Item" + item.Name, 0, Debug.DebugColor.Red);
 
             return true;
         }

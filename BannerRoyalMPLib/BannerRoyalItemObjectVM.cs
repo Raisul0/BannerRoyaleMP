@@ -158,13 +158,9 @@ namespace BannerRoyalMPLib
 
         public void ExecuteEquipItem()
         {
-
-            var peer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
-
             GameNetwork.BeginModuleEventAsClient();
-            GameNetwork.WriteMessage(new StartEquipItem());
-            //GameNetwork.WriteMessage(new StartEquipItem(this.Object, peer));
-            GameNetwork.BeginModuleEventAsClient();
+            GameNetwork.WriteMessage(new StartEquipItem(this.Object, GameNetwork.MyPeer));
+            GameNetwork.EndModuleEventAsClient();
 
         }
 
