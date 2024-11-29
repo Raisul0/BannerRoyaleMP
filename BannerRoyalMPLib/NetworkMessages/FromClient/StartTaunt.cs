@@ -4,18 +4,18 @@ using TaleWorlds.MountAndBlade.Network.Messages;
 using TaleWorlds.ObjectSystem;
 using TaleWorlds.PlayerServices;
 
-namespace BannerRoyalMPLib.NetworkMessages
+namespace BannerRoyalMPLib.NetworkMessages.FromClient
 {
     [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
-    public sealed class StartEquipItem : GameNetworkMessage
+    public sealed class StartTaunt : GameNetworkMessage
     {
-        public ItemObject Item { get; set; }
+        public string Action { get; set; }
         public NetworkCommunicator Player { get; set; }
-        public StartEquipItem() { 
+        public StartTaunt() { 
         }
-        public StartEquipItem(ItemObject item, NetworkCommunicator player)
+        public StartTaunt(string action, NetworkCommunicator player)
         {
-            Item = item;
+            Action = action;
             Player = player;
         }
         protected override MultiplayerMessageFilter OnGetLogFilter()
@@ -31,14 +31,14 @@ namespace BannerRoyalMPLib.NetworkMessages
         protected override bool OnRead()
         {
             bool result = true;
-            this.Item = (ItemObject)ReadObjectReferenceFromPacket(MBObjectManager.Instance, CompressionBasic.GUIDCompressionInfo, ref result);
+            this.Action = ReadStringFromPacket(ref result);
             this.Player = ReadNetworkPeerReferenceFromPacket(ref result);
             return result;
         }
 
         protected override void OnWrite()
         {
-            WriteObjectReferenceToPacket(this.Item, CompressionBasic.GUIDCompressionInfo);
+            WriteStringToPacket(this.Action);
             WriteNetworkPeerReferenceToPacket(this.Player);
         }
     }

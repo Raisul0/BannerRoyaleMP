@@ -126,6 +126,9 @@
       <Reference Include="TaleWorlds.Starter.Library">
         <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.Starter.Library.dll</HintPath>
       </Reference>
+      <Reference Include="TaleWorlds.TwoDimension">
+        <HintPath>..\..\..\..\SteamLibrary\steamapps\common\Mount &amp; Blade II Bannerlord\bin\Win64_Shipping_Client\TaleWorlds.TwoDimension.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>

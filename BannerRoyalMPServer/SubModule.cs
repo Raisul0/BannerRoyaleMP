@@ -28,14 +28,14 @@ public class SubModule : MBSubModuleBase
         TaleWorlds.MountAndBlade.Module.CurrentModule.AddMultiplayerGameMode(new BannerRoyalMPGameMode("BannerRoyalMP"));
 
     }
-    //public override void OnBeforeMissionBehaviorInitialize(Mission mission)
-    //{
+    public override void OnBeforeMissionBehaviorInitialize(Mission mission)
+    {
 
-    //    AddCommonBehaviors(mission);
+        AddCommonBehaviors(mission);
 
-    //}
-    //private void AddCommonBehaviors(Mission mission)
-    //{
-    //    mission.AddMissionBehavior(new ServerAutoHandler());
-    //}
+    }
+    private void AddCommonBehaviors(Mission mission)
+    {
+        mission.AddMissionBehavior(new ServerAutoHandler());
+    }
 }

@@ -1,12 +1,16 @@
 ﻿using BannerRoyalMPLib;
 using BannerRoyalMPLib.NetworkMessages;
+using System.Collections.Generic;
 using System.Linq;
+using TaleWorlds.CampaignSystem.ViewModelCollection.Encyclopedia;
+using TaleWorlds.Engine;
 using TaleWorlds.Engine.GauntletUI;
 using TaleWorlds.GauntletUI.Data;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
+using TaleWorlds.TwoDimension;
 
 namespace BannerRoyalMPClient
 {
@@ -111,8 +115,15 @@ namespace BannerRoyalMPClient
 
         public BannerRoyalInventoryVM GetNearestChest()
         {
-            var entities = Mission.Scene.FindEntityWithName("LootChest");
-            var chests = entities.CollectObjects<LootChest>();
+            var entities = Mission.Current.Scene.FindEntitiesWithTag("LootChest");
+            var chests = new List<LootChest>();
+
+            foreach (var entity in entities)
+            {
+                chests.AddRange(entity.CollectObjects<LootChest>());
+            }
+
+
             var heroPos = GameNetwork.MyPeer.ControlledAgent.GetChestGlobalPosition();
 
             chests.Sort((e1, e2) =>

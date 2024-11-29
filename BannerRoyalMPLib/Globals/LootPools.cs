@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TaleWorlds.Core;
+using TaleWorlds.ObjectSystem;
 
 namespace BannerRoyalMPLib.Globals;
 
@@ -28,20 +29,24 @@ public static class LootPools
         return LootItems;
     }
 
-    //public static List<Tuple<ItemObject, ItemTiers>> TestPool = new()
-    //{
-        
-    //    new Tuple<string, ItemTiers>("mp_pilgrim_hood", ItemTiers.Common),
-    //    new Tuple<string, ItemTiers>("mp_ragged_robes", ItemTiers.Uncommon),
-    //    new Tuple<string, ItemTiers>("mp_ragged_armwraps", ItemTiers.Rare),
-    //    new Tuple<string, ItemTiers>("mp_ragged_boots", ItemTiers.Epic),
-    //    new Tuple<string, ItemTiers>("mp_default_dagger", ItemTiers.Legendary),
-    //    new Tuple<string, ItemTiers>("mp_throwing_stone", ItemTiers.Common),
-    //    new Tuple<string, ItemTiers>("mp_vlandian_short_sword", ItemTiers.Common),
-    //    new Tuple<string, ItemTiers>("mp_vlandian_throwing_axe", ItemTiers.Uncommon),
-    //    new Tuple<string, ItemTiers>("mp_strapped_round_shield", ItemTiers.Epic),
-    //    new Tuple<string, ItemTiers>("mp_vlandian_mace", ItemTiers.Rare),
-    //    new Tuple<string, ItemTiers>("mp_hatchet_axe", ItemTiers.Common),
-    //    new Tuple<string, ItemTiers>("mp_khuzait_sichel", ItemTiers.Legendary),
-    //};
+    public static List<Tuple<string, ItemObject, ItemTiers>> TestPoolItems = new()
+    {
+        new Tuple<string, ItemObject, ItemTiers>("mp_pilgrim_hood",     GetItemObjectfromString("mp_pilgrim_hood"), ItemTiers.Common),
+        new Tuple<string, ItemObject, ItemTiers>("mp_ragged_robes", GetItemObjectfromString("mp_ragged_robes"), ItemTiers.Uncommon),
+        new Tuple<string, ItemObject, ItemTiers>("mp_ragged_armwraps", GetItemObjectfromString("mp_ragged_armwraps"), ItemTiers.Rare),
+        new Tuple<string, ItemObject, ItemTiers>("mp_ragged_boots", GetItemObjectfromString("mp_ragged_boots"), ItemTiers.Epic),
+        new Tuple<string, ItemObject, ItemTiers>("mp_default_dagger",  GetItemObjectfromString("mp_default_dagger"), ItemTiers.Legendary),
+        new Tuple<string, ItemObject, ItemTiers>("mp_throwing_stone", GetItemObjectfromString("mp_throwing_stone"), ItemTiers.Common),
+        new Tuple<string, ItemObject, ItemTiers>("mp_vlandian_short_sword", GetItemObjectfromString("mp_vlandian_short_sword"), ItemTiers.Common),
+        new Tuple<string, ItemObject, ItemTiers>("mp_vlandian_throwing_axe", GetItemObjectfromString("mp_vlandian_throwing_axe"), ItemTiers.Uncommon),
+        new Tuple<string, ItemObject, ItemTiers>("mp_strapped_round_shield", GetItemObjectfromString("mp_strapped_round_shield"), ItemTiers.Epic),
+        new Tuple<string, ItemObject, ItemTiers>("mp_vlandian_mace", GetItemObjectfromString("mp_vlandian_mace"), ItemTiers.Rare),
+        new Tuple<string, ItemObject, ItemTiers>("mp_hatchet_axe", GetItemObjectfromString("mp_hatchet_axe"), ItemTiers.Common),
+        new Tuple<string, ItemObject, ItemTiers>("mp_khuzait_sichel", GetItemObjectfromString("mp_khuzait_sichel"), ItemTiers.Legendary),
+    };
+
+    public static ItemObject GetItemObjectfromString(string itemId)
+    {
+        return MBObjectManager.Instance.GetObject<ItemObject>(itemId);
+    }
 }

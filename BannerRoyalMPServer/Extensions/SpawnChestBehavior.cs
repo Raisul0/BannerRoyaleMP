@@ -1,16 +1,23 @@
 ﻿using BannerRoyalMPLib;
 using BannerRoyalMPLib.Globals;
 using BannerRoyalMPLib.NetworkMessages;
+using BannerRoyalMPLib.NetworkMessages.FromClient;
+using BannerRoyalMPLib.NetworkMessages.FromServer;
+using NetworkMessages.FromServer;
 using TaleWorlds.Core;
+using TaleWorlds.Engine;
+using TaleWorlds.InputSystem;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
+using TaleWorlds.ObjectSystem;
 
 namespace BannerRoyalMPServer.Extensions
 {
     public class SpawnChestBehavior : MissionNetwork
     {
-        public bool spawnComplete = false;
+        public bool chestSpawnComplete = false;
+        public bool armorSpawnComplete = false;
 
         public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
@@ -33,31 +40,34 @@ namespace BannerRoyalMPServer.Extensions
                 networkMessageHandlerRegisterer.Register<StartEquipItem>(this.EquipSelectedItem);
             }
         }
+
+        public void Init()
+        {
+
+        }
+
+        protected override void HandleNewClientAfterSynchronized(NetworkCommunicator networkPeer)
+        {
+            this.SpawnChest(networkPeer);
+        }
         public override void OnMissionTick(float dt)
         {
             base.OnMissionTick(dt);
-            foreach (var peer in GameNetwork.NetworkPeers)
+
+            if(GameNetwork.NetworkPeerCount > 0)
             {
+                var peer = GameNetwork.NetworkPeers[0];
                 if (peer.ControlledAgent != null)
                 {
-                    if (!spawnComplete)
-                    {
-                        this.SpawnChest();
-                    }
-
-                    //GameNetwork.BeginModuleEventAsServer(peer);
-                    //string x = peer.ControlledAgent.Position.x.ToString();
-                    //string y = peer.ControlledAgent.Position.y.ToString();
-                    //string z = peer.ControlledAgent.Position.z.ToString();
-                    //string w = peer.ControlledAgent.Position.w.ToString();
-                    //GameNetwork.WriteMessage(new ServerMessage("[!]: [" + x + "," + y + "," + z + "," + w + "]", false));
-                    //GameNetwork.EndModuleEventAsServer();
-
+                    GameNetwork.BeginModuleEventAsServer(peer);
+                    string x = peer.ControlledAgent.Position.x.ToString();
+                    string y = peer.ControlledAgent.Position.y.ToString();
+                    string z = peer.ControlledAgent.Position.z.ToString();
+                    string w = peer.ControlledAgent.Position.w.ToString();
+                    GameNetwork.WriteMessage(new ServerMessage("[!]: [" + x + "," + y + "," + z + "," + w + "]", false));
+                    GameNetwork.EndModuleEventAsServer();
                 }
-
             }
-
-            
         }
 
         public override void AfterStart()
@@ -80,20 +90,57 @@ namespace BannerRoyalMPServer.Extensions
             return true;
         }
 
-        public void SpawnChest()
+        public void SpawnChest(NetworkCommunicator networkPeer)
         {
             if(GameNetwork.IsServer)
             {
-                foreach (var location in LootLocations.Locations)
-                {
-                    var frame = new MatrixFrame(Mat3.Identity, new Vec3(location.Item1, location.Item2, location.Item3, location.Item4));
-                    //var chest = GameEntity.Instantiate(this.Mission.Scene, "loot_chest", frame);
-                    //GameEntity gameEntity = GameEntity.Instantiate(this.Mission.Scene, "loot_chest", frame);
-                    var chest = base.Mission.CreateMissionObjectFromPrefab("loot_chest", frame);
-                }
-                spawnComplete = true;
+
+                GameNetwork.BeginModuleEventAsServer(networkPeer);
+                GameNetwork.WriteMessage(new StartSpawnChest());
+                GameNetwork.EndModuleEventAsServer();
+
+                //foreach (var location in LootLocations.Locations)
+                //{
+                //    var frame = new MatrixFrame(Mat3.Identity, new Vec3(location.Item1, location.Item2, location.Item3, location.Item4));
+                //    GameEntity gameEntity = GameEntity.Instantiate(Mission.Current.Scene, "loot_chest", frame);
+                //    LootChest chest = gameEntity.GetFirstScriptOfType<LootChest>();
+                //    var inventoryVm = new BannerRoyalInventoryVM(Mission.Current);
+                //    inventoryVm.SetChestItems(LootPools.TestPool());
+                //    chest.SetViewModel(inventoryVm);
+                //    chest.SetTag("loot_chest_server");
+                //}
+                chestSpawnComplete = true;
             }
             
+        }
+
+        public void SpawnArmor(NetworkCommunicator networkPeer)
+        {
+            if (GameNetwork.IsServer)
+            {
+
+                //GameNetwork.BeginModuleEventAsServer(networkPeer);
+                //GameNetwork.WriteMessage(new StartSpawnArmor());
+                //GameNetwork.EndModuleEventAsServer();
+
+
+                //var armorItem = MBObjectManager.Instance.GetObject<ItemObject>("mp_desert_helmet");
+                //MissionWeapon armorMissionWeapon = new MissionWeapon(armorItem, null, null);
+                //WeaponData weaponData = armorMissionWeapon.GetWeaponData(true);
+
+
+                //MatrixFrame frame = new MatrixFrame(Mat3.Identity, new Vec3(334.74f, 596.142f, 18.32f, position.w));
+                //var armorObject = base.Mission.CreateMissionObjectFromPrefab("spawned_armor", frame);
+                //var spawnedArmor = (BannerRoyalMPLib.SpawnedArmor)armorObject;
+                //spawnedArmor.SetArmorItem(armorItem);
+                //var armorEntity = spawnedArmor.GameEntity;
+                //armorEntity.AddPhysics(weaponData.BaseWeight, weaponData.CenterOfMassShift, weaponData.Shape, Vec3.One, Vec3.Zero, PhysicsMaterial.GetFromIndex(weaponData.PhysicsMaterialIndex), false, 0);
+                //armorEntity.SetPhysicsState(true, true);
+                //armorEntity.SetMobility(GameEntity.Mobility.dynamic_forced);
+
+                armorSpawnComplete = true;
+            }
+
         }
 
     }

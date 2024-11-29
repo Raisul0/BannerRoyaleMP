@@ -24,7 +24,7 @@ namespace BannerRoyalMPServer
                         new BannerRoyalMPLobbyComponent(),
                         new BannerRoyalMPBehavior(),
                         new BannerRoyalMPCommonBehavior(),
-
+                        //new ShrinkingZoneBehavior(),
 
                         new MultiplayerTimerComponent(),
                         new SpawnComponent(new BannerRoyalMPSpawnFrameBehavior(),
@@ -39,6 +39,7 @@ namespace BannerRoyalMPServer
                         new MissionOptionsComponent(),
                         new MissionScoreboardComponent(new FFAScoreboardData()),
                         new SpawnChestBehavior(),
+                        new BoundaryZoneBehavior(),
                     };
                 }, true, true);
 

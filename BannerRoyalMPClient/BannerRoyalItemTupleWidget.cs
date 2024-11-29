@@ -27,6 +27,21 @@ namespace BannerRoyalMPClient
         {
             base.OnDragBegin();
         }
+
+        protected override void OnDragEnd()
+        {
+            var draggedWidget = (BannerRoyalItemTuppleWidget)this.EventManager.DraggedWidget;
+            if (draggedWidget != null)
+            {
+                draggedWidget.DropItem();
+            }
+            base.OnDragEnd();
+        }
+
+        public void DropItem()
+        {
+            EventFired("DropItem");
+        }
         protected override bool OnDrop()
         {
             

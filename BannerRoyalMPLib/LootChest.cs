@@ -27,14 +27,19 @@ namespace BannerRoyalMPLib
         protected override void OnInit()
         {
             base.OnInit();
-            base.GameEntity.Name = "LootChest";
-            var inventoryVm = new BannerRoyalInventoryVM(Mission.Current);
-            inventoryVm.SetChestItems(LootPools.TestPool());
-            SetViewModel(inventoryVm);
+            base.GameEntity.AddTag("LootChest");
         }
 
         public override ScriptComponentBehavior.TickRequirement GetTickRequirement()
         {
+            if(_inventoryVM != null)
+            {
+                if(_inventoryVM._isLootBoxFocused)
+                {
+
+                }
+            }
+
             return ScriptComponentBehavior.TickRequirement.Tick | base.GetTickRequirement();
         }
         
@@ -42,19 +47,32 @@ namespace BannerRoyalMPLib
         public override void OnFocusGain(Agent userAgent)
         {
             //base.OnFocusGain(userAgent);
-            _inventoryVM._isLootBoxFocused = true;
+            if(_inventoryVM != null)
+            {
+                _inventoryVM._isLootBoxFocused = true;
+            }
+
         }
 
         // Token: 0x06002FBD RID: 12221 RVA: 0x000C57F0 File Offset: 0x000C39F0
         public override void OnFocusLose(Agent userAgent)
         {
             //base.OnFocusLose(userAgent);
-            _inventoryVM._isLootBoxFocused = false;
+            if (_inventoryVM != null)
+            {
+                _inventoryVM._isLootBoxFocused = false;
+            }
+            
         }
 
         public void SetViewModel(BannerRoyalInventoryVM inventoryVM)
         {
             _inventoryVM = inventoryVM;
+        }
+
+        public void SetTag(string tagName)
+        {
+            base.GameEntity.AddTag(tagName);
         }
 
         public BannerRoyalInventoryVM _inventoryVM;

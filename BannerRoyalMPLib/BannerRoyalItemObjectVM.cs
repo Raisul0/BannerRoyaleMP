@@ -4,7 +4,7 @@ using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Information;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
-using BannerRoyalMPLib.NetworkMessages;
+using BannerRoyalMPLib.NetworkMessages.FromClient;
 
 namespace BannerRoyalMPLib
 {
@@ -154,6 +154,27 @@ namespace BannerRoyalMPLib
                 result += @"No Item";
             }
             return result;
+        }
+
+        public void ExecuteDropItem()
+        {
+            if(this.Object.WeaponComponent == null)
+            {
+
+                var dropPosition= GameNetwork.MyPeer.ControlledAgent.Position;
+                dropPosition.z += 2f;
+
+                var dropFrame = new MatrixFrame(Mat3.Identity, new Vec3(dropPosition.x, dropPosition.y, dropPosition.z, dropPosition.w));
+
+                GameNetwork.BeginModuleEventAsClient();
+                GameNetwork.WriteMessage(new GetSpawnArmor(this.Object, dropFrame));
+                GameNetwork.EndModuleEventAsClient();
+            }
+            else
+            {
+
+            }
+            
         }
 
         public void ExecuteEquipItem()

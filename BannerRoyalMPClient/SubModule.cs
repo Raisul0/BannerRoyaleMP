@@ -24,17 +24,16 @@ namespace BannerRoyalMPClient
             base.OnSubModuleLoad();
         }
 
-        //public override void OnBeforeMissionBehaviorInitialize(Mission mission)
-        //{
+        public override void OnBeforeMissionBehaviorInitialize(Mission mission)
+        {
 
-        //    AddCommonBehaviors(mission);
+            AddCommonBehaviors(mission);
 
-        //}
+        }
 
-        //public void AddCommonBehaviors(Mission mission)
-        //{
-        //    mission.AddMissionBehavior(new ClientAutoHandler());
-        //    mission.AddMissionBehavior(new SpawnChestBehavior());
-        //}
+        public void AddCommonBehaviors(Mission mission)
+        {
+            mission.AddMissionBehavior(new ClientAutoHandler());
+        }
     }
 }
