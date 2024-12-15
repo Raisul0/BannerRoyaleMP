@@ -26,6 +26,8 @@ namespace BannerRoyalMPClient.Extensions.SpawnChest
             {
                 var frame = new MatrixFrame(Mat3.Identity, new Vec3(location.Item1, location.Item2, location.Item3, location.Item4));
                 GameEntity gameEntity = GameEntity.Instantiate(Mission.Current.Scene, "loot_chest", frame);
+                gameEntity.SetFactorColor(Colors.Green.ToUnsignedInteger());
+                gameEntity.SetContourColor(Colors.Red.ToUnsignedInteger());
                 LootChest chest = gameEntity.GetFirstScriptOfType<LootChest>();
                 var inventoryVm = new BannerRoyalInventoryVM(Mission.Current);
                 inventoryVm.SetChestItems(LootPools.TestPoolItems);
