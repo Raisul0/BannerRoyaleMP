@@ -24,7 +24,7 @@ namespace BannerRoyalMPClient
         bool InventoryVisible=false;
         private SoundEvent _chestOpenSound;
         private string _spawnSound = "event:/alerts/report/battle_winning";
-        private LootChest lootChest;
+        private LootChest _lootChest;
         public override void OnMissionScreenInitialize()
         {
             base.OnMissionScreenInitialize();
@@ -106,11 +106,7 @@ namespace BannerRoyalMPClient
             _movie = _gauntletLayer.LoadMovie(BannerRoyalMovies.BannerRoyalInventory, _dataSource);
             MissionScreen.AddLayer(_gauntletLayer);
             _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
-
-            this._chestOpenSound = SoundEvent.CreateEventFromString(_spawnSound, base.Mission.Scene);
-            var frame = lootChest.GameEntity.GetGlobalFrame();
-            this._chestOpenSound.PlayInPosition(frame.origin + frame.rotation.u * 3f);
-
+            _lootChest.StopSound();
         }
 
         public void Hide()
@@ -143,8 +139,8 @@ namespace BannerRoyalMPClient
             });
 
             // Get the closest entity
-            lootChest = chests.FirstOrDefault();
-            return lootChest._inventoryVM;
+            _lootChest = chests.FirstOrDefault();
+            return _lootChest._inventoryVM;
         }
 
     }

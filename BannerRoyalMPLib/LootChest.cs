@@ -28,21 +28,23 @@ namespace BannerRoyalMPLib
         {
             base.OnInit();
             base.GameEntity.AddTag("LootChest");
+            SoundInit();
+        }
+
+        private void SoundInit()
+        {
+            _soundIndex = SoundEvent.GetEventIdFromString(_soundEventName);
+            _emittingSoundEvent = SoundEvent.CreateEvent(_soundIndex, Scene);
+            var position = base.GameEntity.GlobalPosition;
+            _emittingSoundEvent.SetPosition(position);
+            _emittingSoundEvent.Play();
         }
 
         public override ScriptComponentBehavior.TickRequirement GetTickRequirement()
         {
-            if(_inventoryVM != null)
-            {
-                if(_inventoryVM._isLootBoxFocused)
-                {
-
-                }
-            }
-
+            
             return ScriptComponentBehavior.TickRequirement.Tick | base.GetTickRequirement();
         }
-        
 
         public override void OnFocusGain(Agent userAgent)
         {
@@ -52,6 +54,17 @@ namespace BannerRoyalMPLib
                 _inventoryVM._isLootBoxFocused = true;
             }
 
+        }
+
+        public void StopSound()
+        {
+            if (_soundIndex != 0)
+            {
+                if(_emittingSoundEvent != null)
+                {
+                    _emittingSoundEvent.Stop();
+                }
+            }
         }
 
         // Token: 0x06002FBD RID: 12221 RVA: 0x000C57F0 File Offset: 0x000C39F0
@@ -76,5 +89,8 @@ namespace BannerRoyalMPLib
         }
 
         public BannerRoyalInventoryVM _inventoryVM;
+        private SoundEvent _emittingSoundEvent;
+        private string _soundEventName = "Lootchest/Emit_Sound";
+        private int _soundIndex;
     }
 }
