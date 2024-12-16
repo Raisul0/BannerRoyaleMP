@@ -35,9 +35,9 @@ namespace BannerRoyalMPLib
         {
             _soundIndex = SoundEvent.GetEventIdFromString(_soundEventName);
             _emittingSoundEvent = SoundEvent.CreateEvent(_soundIndex, Scene);
-            var position = base.GameEntity.GlobalPosition;
-            _emittingSoundEvent.SetPosition(position);
-            _emittingSoundEvent.Play();
+            var frame = base.GameEntity.GetGlobalFrame();
+            _emittingSoundEvent.PlayInPosition(frame.origin + frame.rotation.u * 3f);
+
         }
 
         public override ScriptComponentBehavior.TickRequirement GetTickRequirement()

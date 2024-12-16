@@ -22,8 +22,6 @@ namespace BannerRoyalMPClient
         BannerRoyalInventoryVM _dataSource;
         int ViewOrderPriority = 99;
         bool InventoryVisible=false;
-        private SoundEvent _chestOpenSound;
-        private string _spawnSound = "event:/alerts/report/battle_winning";
         private LootChest _lootChest;
         public override void OnMissionScreenInitialize()
         {
@@ -46,7 +44,6 @@ namespace BannerRoyalMPClient
             base.OnBehaviorInitialize();
             _gauntletLayer = new GauntletLayer(ViewOrderPriority);
             if (_dataSource == null) _dataSource = new BannerRoyalInventoryVM(Mission);
-            this._chestOpenSound = SoundEvent.CreateEventFromString(_spawnSound, base.Mission.Scene);
 
         }
 
