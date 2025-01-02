@@ -59,13 +59,13 @@ namespace BannerRoyalMPServer.Extensions
                 var peer = GameNetwork.NetworkPeers[0];
                 if (peer.ControlledAgent != null)
                 {
-                    GameNetwork.BeginModuleEventAsServer(peer);
-                    string x = peer.ControlledAgent.Position.x.ToString();
-                    string y = peer.ControlledAgent.Position.y.ToString();
-                    string z = peer.ControlledAgent.Position.z.ToString();
-                    string w = peer.ControlledAgent.Position.w.ToString();
-                    GameNetwork.WriteMessage(new ServerMessage("[!]: [" + x + "," + y + "," + z + "," + w + "]", false));
-                    GameNetwork.EndModuleEventAsServer();
+                    //GameNetwork.BeginModuleEventAsServer(peer);
+                    //string x = peer.ControlledAgent.Position.x.ToString();
+                    //string y = peer.ControlledAgent.Position.y.ToString();
+                    //string z = peer.ControlledAgent.Position.z.ToString();
+                    //string w = peer.ControlledAgent.Position.w.ToString();
+                    //GameNetwork.WriteMessage(new ServerMessage("[!]: [" + x + "," + y + "," + z + "," + w + "]", false));
+                    //GameNetwork.EndModuleEventAsServer();
                 }
             }
         }

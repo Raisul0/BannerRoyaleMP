@@ -9,13 +9,13 @@ namespace BannerRoyalMPLib.NetworkMessages.FromClient
     [DefineGameNetworkMessageTypeForMod(GameNetworkMessageSendType.FromClient)]
     public sealed class StartTaunt : GameNetworkMessage
     {
-        public string Action { get; set; }
+        public int TauntIndex { get; set; }
         public NetworkCommunicator Player { get; set; }
         public StartTaunt() { 
         }
-        public StartTaunt(string action, NetworkCommunicator player)
+        public StartTaunt(int tauntIndex, NetworkCommunicator player)
         {
-            Action = action;
+            TauntIndex = tauntIndex;
             Player = player;
         }
         protected override MultiplayerMessageFilter OnGetLogFilter()
@@ -31,14 +31,14 @@ namespace BannerRoyalMPLib.NetworkMessages.FromClient
         protected override bool OnRead()
         {
             bool result = true;
-            this.Action = ReadStringFromPacket(ref result);
+            this.TauntIndex = ReadIntFromPacket(new CompressionInfo.Integer(-1, 5000, true), ref result);
             this.Player = ReadNetworkPeerReferenceFromPacket(ref result);
             return result;
         }
 
         protected override void OnWrite()
         {
-            WriteStringToPacket(this.Action);
+            WriteIntToPacket(TauntIndex, new CompressionInfo.Integer(-1, 5000, true));
             WriteNetworkPeerReferenceToPacket(this.Player);
         }
     }

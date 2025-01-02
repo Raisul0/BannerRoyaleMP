@@ -11,6 +11,6 @@ namespace BannerRoyalMPLib
         public static string BannerRoyalLootBox = "BannerRoyalLootbox";
         public static string BannerRoyalLootboxTest = "BannerRoyalLootboxTest";
         public static string BannerRoyalInventory = "BannerRoyalInventory";
-        public static string BannerRoyalTaunt = "RadialMenu";
+        public static string BannerRoyalTaunt = "BannerRoyalTauntMenu";
     }
 }

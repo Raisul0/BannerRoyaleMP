@@ -28,15 +28,15 @@ namespace BannerRoyalMPLib
         {
             base.OnInit();
             base.GameEntity.AddTag("LootChest");
-            SoundInit();
         }
 
-        private void SoundInit()
+        public void SoundInit()
         {
             _soundIndex = SoundEvent.GetEventIdFromString(_soundEventName);
             _emittingSoundEvent = SoundEvent.CreateEvent(_soundIndex, Scene);
-            var frame = base.GameEntity.GetGlobalFrame();
-            _emittingSoundEvent.PlayInPosition(frame.origin + frame.rotation.u * 3f);
+            var position = base.GameEntity.GlobalPosition;
+            _emittingSoundEvent.SetPosition(position);
+            _emittingSoundEvent.Play();
 
         }
 
@@ -53,7 +53,6 @@ namespace BannerRoyalMPLib
             {
                 _inventoryVM._isLootBoxFocused = true;
             }
-
         }
 
         public void StopSound()

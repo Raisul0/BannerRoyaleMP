@@ -2,6 +2,7 @@
 using System.Linq;
 using BannerRoyalMPLib;
 using BannerRoyalMPServer.Extensions;
+using BannerRoyalMPServer.Extensions.Taunt;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer;
@@ -40,6 +41,7 @@ namespace BannerRoyalMPServer
                         new MissionScoreboardComponent(new FFAScoreboardData()),
                         new SpawnChestBehavior(),
                         new BoundaryZoneBehavior(),
+                        new TauntBehavior()
                     };
                 }, true, true);
 

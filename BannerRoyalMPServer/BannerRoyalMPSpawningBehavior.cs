@@ -122,7 +122,8 @@ namespace BannerRoyalMPServer
                     //{
                     //    mPHeroClassForPeer = MultiplayerClassDivisions.GetMPHeroClasses(culture).GetRandomElementInefficiently();
                     //    basicCharacterObject = mPHeroClassForPeer.TroopCharacter;
-                    //}
+                    //}4
+
                     SpawnHelper.SpawnPlayer(peer, onSpawnPerkHandler, basicCharacterObject, alternativeEquipment: useAltEquipement ? _altEquipment : null, customCulture: culture, mortalityState: MortalityState.Invulnerable);
                     playersSpawn++;
 

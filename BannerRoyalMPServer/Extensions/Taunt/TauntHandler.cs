@@ -1,4 +1,5 @@
 ﻿using BannerRoyalMPLib;
+using BannerRoyalMPLib.Globals;
 using BannerRoyalMPLib.NetworkMessages.FromClient;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TaleWorlds.Core;
 using TaleWorlds.MountAndBlade;
+using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Lobby.Armory;
 
 namespace BannerRoyalMPServer.Extensions.Taunt
 {
@@ -20,9 +22,12 @@ namespace BannerRoyalMPServer.Extensions.Taunt
         public bool UseTaunt(NetworkCommunicator networkPeer, StartTaunt baseMessage)
         {
             var peer = baseMessage.Player;
-            var action = baseMessage.Action;
+            var tauntIndex = baseMessage.TauntIndex;
 
-            ActionIndexCache suitableTauntAction = CosmeticsManagerHelper.GetSuitableTauntAction(networkPeer.ControlledAgent, 1);
+            var tauntAction = BannerRoyalTauntWheel.Taunts.FirstOrDefault(x=>x.TauntId == tauntIndex)?.TauntAction ?? "act_taunt_congo";
+
+            ActionIndexCache suitableTauntAction = ActionIndexCache.Create(tauntAction);
+
             if (suitableTauntAction.Index >= 0)
             {
                 networkPeer.ControlledAgent.SetActionChannel(1, suitableTauntAction, false, 0UL, 0f, 1f, -0.2f, 0.4f, 0f, false, -0.2f, 0, true);

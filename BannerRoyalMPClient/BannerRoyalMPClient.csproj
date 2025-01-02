@@ -267,7 +267,7 @@
     <Compile Include="Extensions\BoundaryZone\BoundaryZoneHandler.cs" />
     <Compile Include="Extensions\SpawnArmor\SpawnArmorHandler.cs" />
     <Compile Include="Extensions\SpawnChest\SpawnChestHandler.cs" />
-    <Compile Include="RadialMenuView.cs" />
+    <Compile Include="BannerRoyalTauntMenuView.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="BannerRoyalMPMissionBehaviours.cs" />
     <Compile Include="BannerRoyalMPMissionView.cs" />

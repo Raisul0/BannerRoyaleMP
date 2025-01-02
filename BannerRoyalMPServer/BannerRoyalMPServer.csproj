@@ -90,6 +90,9 @@
       <Reference Include="TaleWorlds.MountAndBlade.Multiplayer">
         <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.MountAndBlade.Multiplayer.dll</HintPath>
       </Reference>
+      <Reference Include="TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection">
+        <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Multiplayer\bin\Win64_Shipping_Client\TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.dll</HintPath>
+      </Reference>
       <Reference Include="TaleWorlds.Network">
         <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Dedicated Server\bin\Win64_Shipping_Server\TaleWorlds.Network.dll</HintPath>
       </Reference>

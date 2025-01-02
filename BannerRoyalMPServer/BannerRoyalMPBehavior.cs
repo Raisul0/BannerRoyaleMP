@@ -102,20 +102,20 @@ namespace BannerRoyalMPServer
 
             //For Testing Purpose Keep the Game Running 
 
-            //if (remainingAgents.Count <= 1)
-            //{
-            //    if (remainingAgents.Count == 1)
-            //    {
-            //        Agent winner = remainingAgents.FirstOrDefault();
-            //        string winMessage = $"{winner.Name} is the last surviving participant. GG !";
-            //    }
-            //    else
-            //    {
-            //        string loseMessage = $"Nobody survived... How is that even possible ?";
-            //    }
-            //    GameModeStarter.Instance.StartLobby("Lobby", MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(), MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
-            //    _gameEnded = true;
-            //}
+            if (remainingAgents.Count <= 1)
+            {
+                if (remainingAgents.Count == 1)
+                {
+                    Agent winner = remainingAgents.FirstOrDefault();
+                    string winMessage = $"{winner.Name} is the last surviving participant. GG !";
+                }
+                else
+                {
+                    string loseMessage = $"Nobody survived... How is that even possible ?";
+                }
+                GameModeStarter.Instance.StartLobby("Lobby", MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(), MultiplayerOptions.OptionType.CultureTeam2.GetStrValue());
+                _gameEnded = true;
+            }
         }
 
         private void DamageAgentsOutsideZone(float dt)

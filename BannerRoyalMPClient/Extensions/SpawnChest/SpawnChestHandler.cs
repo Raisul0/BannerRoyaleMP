@@ -31,6 +31,7 @@ namespace BannerRoyalMPClient.Extensions.SpawnChest
                 var inventoryVm = new BannerRoyalInventoryVM(Mission.Current);
                 inventoryVm.SetChestItems(LootPools.TestPoolItems);
                 chest.SetViewModel(inventoryVm);
+                chest.SoundInit();
             }
         }
        
