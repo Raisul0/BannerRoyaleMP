@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BannerRoyalMPLib.Globals;
 using TaleWorlds.Core;
 using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
@@ -86,7 +87,14 @@ namespace BannerRoyalMPLib
 						equipment[item.Item1] = item.Item2;
 					}
 				}
-				agentBuildData.Equipment(equipment);
+
+				equipment[EquipmentIndex.Head] = CustomAgent.Head;
+                equipment[EquipmentIndex.Body] = CustomAgent.Body;
+                equipment[EquipmentIndex.Leg] = CustomAgent.Leg;
+                equipment[EquipmentIndex.Gloves] = CustomAgent.Gloves;
+                equipment[EquipmentIndex.Cape] = CustomAgent.Cape;
+
+                agentBuildData.Equipment(equipment);
 
 				// Use player custom bodyproperties only if allowed
 				agentBuildData.EquipmentSeed(missionLobbyComponent.GetRandomFaceSeedForCharacter(character, agentBuildData.AgentVisualsIndex));

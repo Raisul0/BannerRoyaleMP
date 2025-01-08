@@ -111,6 +111,7 @@
     <Compile Include="CircleMenuItemVM.cs" />
     <Compile Include="GenericVM.cs" />
     <Compile Include="Globals\BannerRoyalTauntWheel.cs" />
+    <Compile Include="Globals\CustomAgent.cs" />
     <Compile Include="Globals\ItemTiers.cs" />
     <Compile Include="Globals\LootLocations.cs" />
     <Compile Include="Globals\LootPools.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="NetworkMessages\FromServer\SetBoundaryZone.cs" />
     <Compile Include="NetworkMessages\FromServer\StartSpawnChest.cs" />
     <Compile Include="NetworkMessages\FromClient\StartEquipItem.cs" />
+    <Compile Include="ObjectClasses\BannerRoyalAgentBodyCosmetic.cs" />
     <Compile Include="ObjectClasses\BannerRoyalTaunt.cs" />
     <Compile Include="SpawnedArmor.cs" />
     <Compile Include="SubModule.cs" />
