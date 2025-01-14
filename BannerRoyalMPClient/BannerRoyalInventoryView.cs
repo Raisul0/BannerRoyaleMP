@@ -11,6 +11,7 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.View;
 using TaleWorlds.MountAndBlade.View.MissionViews;
 using TaleWorlds.TwoDimension;
+using static TaleWorlds.MountAndBlade.SkinVoiceManager;
 
 namespace BannerRoyalMPClient
 {
@@ -104,6 +105,9 @@ namespace BannerRoyalMPClient
             MissionScreen.AddLayer(_gauntletLayer);
             _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             _lootChest.StopSound();
+            var voiceType = SkinVoiceManager.VoiceType.MpBarks[1];
+
+            Agent.Main.MakeVoice(voiceType, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
         }
 
         public void Hide()

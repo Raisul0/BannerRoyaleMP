@@ -1,0 +1,46 @@
+﻿<prefabs>
+	<game_entity name="loot_chest" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<scripts>
+			<script name="LootChest">
+				<variables>
+					<variable name="NavMeshPrefabName" value=""/>
+				</variables>
+			</script>
+			<script name="StandingPoint">
+				<variables>
+					<variable name="AutoSheathWeapons" value="false"/>
+					<variable name="TranslateUser" value="true"/>
+					<variable name="DescriptionMessage" value=""/>
+					<variable name="ActionMessage" value=""/>
+				</variables>
+			</script>
+		</scripts>
+		<physics shape="bo_bd_chest_c" override_material="wood" mass="1.000"/>
+		<components>
+			<meta_mesh_component name="bd_chest_c"/>
+		</components>
+	</game_entity>
+	<game_entity name="spawned_armor" old_prefab_name="">
+		<transform position="0.000, 0.000, 0.000" rotation_euler="0.000, 0.000, 0.000"/>
+		<scripts>
+			<script name="SpawnedArmor">
+				<variables>
+					<variable name="NavMeshPrefabName" value=""/>
+				</variables>
+			</script>
+			<script name="StandingPoint">
+				<variables>
+					<variable name="AutoSheathWeapons" value="false"/>
+					<variable name="TranslateUser" value="true"/>
+					<variable name="DescriptionMessage" value=""/>
+					<variable name="ActionMessage" value=""/>
+				</variables>
+			</script>
+		</scripts>
+		<physics shape="bo_bd_sack_b" override_material="default" mass="1.000"/>
+		<components>
+			<meta_mesh_component name="armor_merchant_helmet_c"/>
+		</components>
+	</game_entity>
+</prefabs>

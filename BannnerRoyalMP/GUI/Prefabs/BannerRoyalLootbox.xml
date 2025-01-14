@@ -1,0 +1,78 @@
+<Prefab>
+	<Constants>
+	</Constants>
+
+	<Window>
+		<Widget IsVisible="@IsVisible" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="900" SuggestedHeight="350" HorizontalAlignment = "Center" VerticalAlignment="Center" Sprite="BlankWhiteSquare_9" AlphaFactor="0.7" Color="#000000FF">
+			<Children>
+				<BrushWidget Brush="Frame1.Border" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+					<Children>
+						<BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="40" HorizontalAlignment="Center" VerticalAlignment="Top" >
+							<Children >
+								<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="StdAssets\tabbar_long" ExtendBottom="50" >
+									<Children>
+										<TextWidget  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"  Text = "Loot Box"/>
+									</Children>
+								</Widget>
+							</Children>
+						</BrushWidget>
+						<ListPanel	DataSource="{ChestItemsTopRow}" DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+									HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="50" MarginBottom="10" MarginLeft="10"
+									LayoutImp.LayoutMethod="HorizontalLeftToRight" >
+							<ItemTemplate>
+								<BrushWidget Brush="Frame1.Border" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginRight="20">
+									<Children>
+										<Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Sprite="BlankWhiteSquare_9" AlphaFactor="0.4" Color="@TierColor" >
+											<Children>
+												<ButtonWidget   WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+																SuggestedWidth="130" SuggestedHeight="130"
+																HorizontalAlignment="Center" VerticalAlignment="Center"
+																MarginBottom="5"
+																Command.Click="ExecuteOnSelected" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" >
+													<Children>
+														<ImageIdentifierWidget DataSource= "{ImageIdentifier}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+																				SuggestedWidth="130" SuggestedHeight="76"
+																				HorizontalAlignment="Center" VerticalAlignment="Center"
+																				AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" DoNotAcceptEvents="true"/>
+
+													</Children>
+												</ButtonWidget>
+											</Children>
+										</Widget>
+									</Children>
+								</BrushWidget>
+							</ItemTemplate>
+						</ListPanel>
+						<ListPanel	DataSource="{ChestItemsBottomRow}" DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+									HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="205" MarginBottom="10" MarginLeft="10"
+									LayoutImp.LayoutMethod="HorizontalLeftToRight" >
+							<ItemTemplate>
+								<BrushWidget Brush="Frame1.Border" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" MarginRight="20">
+									<Children>
+										<Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Sprite="BlankWhiteSquare_9" AlphaFactor="0.4" Color="@TierColor" >
+											<Children>
+												<ButtonWidget   WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+																SuggestedWidth="130" SuggestedHeight="130"
+																HorizontalAlignment="Center" VerticalAlignment="Center"
+																MarginBottom="5"
+																Command.Click="ExecuteOnSelected" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" >
+													<Children>
+														<ImageIdentifierWidget DataSource= "{ImageIdentifier}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+																				SuggestedWidth="130" SuggestedHeight="76"
+																				HorizontalAlignment="Center" VerticalAlignment="Center"
+																				AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" DoNotAcceptEvents="true"/>
+
+													</Children>
+												</ButtonWidget>
+											</Children>
+										</Widget>
+									</Children>
+								</BrushWidget>
+							</ItemTemplate>
+						</ListPanel>
+					</Children>
+				</BrushWidget>
+			</Children>
+		</Widget>
+	</Window>
+</Prefab>

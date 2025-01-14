@@ -1,0 +1,92 @@
+﻿<Prefab>
+	<Constants>
+	</Constants>
+
+	<Window>
+		<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" >
+			<Children>
+				<Widget IsVisible="@InventoryIsVisible" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" >
+					<Children>
+						<!-- Top Inventory Panel-->
+						<Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="750" SuggestedHeight="150" HorizontalAlignment = "Center" VerticalAlignment="Top" MarginTop="15" Sprite="BlankWhiteSquare_9" AlphaFactor="0.7" Color="#000000FF">
+							<Children>
+								<BrushWidget Brush="Frame1.Border" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+									<Children >
+										<ListPanel DataSource="{InventoryItems}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="HorizontalLeftToRight" MarginTop="10" MarginBottom="10"  MarginLeft="10">
+											<ItemTemplate >
+												<BannerRoyalItemTuple Parameter.WidgetType="Inventory"/>
+											</ItemTemplate>
+										</ListPanel>
+									</Children>
+								</BrushWidget>
+							</Children>
+						</Widget>
+
+						<!-- Left Weapon Panel-->
+						<Widget  WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="150" SuggestedHeight="600" HorizontalAlignment = "Left" VerticalAlignment="Center" MarginLeft="15" Sprite="BlankWhiteSquare_9" AlphaFactor="0.7" Color="#000000FF">
+							<Children>
+								<BrushWidget Brush="Frame1.Border" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+									<Children >
+										<ListPanel DataSource="{WeaponItems}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="VerticalBottomToTop" MarginLeft="10" MarginRight="10" MarginTop="10" >
+											<ItemTemplate >
+												<BannerRoyalItemTuple Parameter.WidgetType="Armor"/>
+											</ItemTemplate>
+										</ListPanel>
+									</Children>
+								</BrushWidget>
+							</Children>
+						</Widget>
+
+						<!-- Right Armpr Panel-->
+						<Widget  WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="150" SuggestedHeight="600" HorizontalAlignment = "Right" VerticalAlignment="Center" MarginRight="15" Sprite="BlankWhiteSquare_9" AlphaFactor="0.7" Color="#000000FF">
+							<Children>
+								<BrushWidget Brush="Frame1.Border" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+									<Children >
+										<ListPanel DataSource="{ArmorItems}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" StackLayout.LayoutMethod="VerticalBottomToTop" MarginLeft="10" MarginRight="10" MarginTop="10" >
+											<ItemTemplate >
+												<BannerRoyalItemTuple Parameter.WidgetType="Weapon" />
+											</ItemTemplate>
+										</ListPanel>
+									</Children>
+								</BrushWidget>
+							</Children>
+						</Widget>
+
+					</Children>
+				</Widget>
+
+				<Widget IsVisible="@LootboxIsVisible" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="900" SuggestedHeight="370" HorizontalAlignment = "Center" VerticalAlignment="Center" Sprite="BlankWhiteSquare_9" AlphaFactor="0.7" Color="#000000FF">
+					<Children>
+						<BrushWidget Brush="Frame1.Border" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+							<Children>
+								<BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="40" HorizontalAlignment="Center" VerticalAlignment="Top" >
+									<Children >
+										<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="StdAssets\tabbar_long" ExtendBottom="50" >
+											<Children>
+												<TextWidget  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"  Text = "Loot Box"/>
+											</Children>
+										</Widget>
+									</Children>
+								</BrushWidget>
+								<ListPanel	DataSource="{ChestItemsTopRow}" DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+											HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="50" MarginBottom="10" MarginLeft="10"
+											StackLayout.LayoutMethod="HorizontalLeftToRight" >
+									<ItemTemplate>
+										<BannerRoyalItemTuple Parameter.WidgetType="@ItemWidgetType" />
+									</ItemTemplate>
+								</ListPanel>
+								<ListPanel	DataSource="{ChestItemsBottomRow}" DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+											HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="205" MarginBottom="10" MarginLeft="10"
+											StackLayout.LayoutMethod="HorizontalLeftToRight" >
+									<ItemTemplate>
+										<BannerRoyalItemTuple  Parameter.WidgetType="@ItemWidgetType" />
+									</ItemTemplate>
+								</ListPanel>
+							</Children>
+						</BrushWidget>
+					</Children>
+				</Widget>
+			</Children>
+		</Widget>
+	</Window>
+</Prefab>

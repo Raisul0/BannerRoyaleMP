@@ -1,0 +1,16 @@
+﻿<action_sets>
+  <action_set
+    id="as_human_warrior"
+    skeleton="human_skeleton"
+    movement_system="bipedal">
+    <action
+      type="act_taunt_congo"
+      animation="taunt_congo_dance" />
+	<action
+      type="act_taunt_salsa"
+      animation="taunt_salsa_dance" />
+	<action
+      type="act_taunt_flexing"
+      animation="taunt_flexing_dance" />
+  </action_set>
+</action_sets>

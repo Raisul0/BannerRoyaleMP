@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Module>
+	<Name value="BannerRoyalMP"/>
+	<Id value="BannerRoyalMP"/>
+	<Version value="v1.0.0.0"/>
+	<ModuleCategory value="Multiplayer"/>
+	<DependedModules>
+		<DependedModule Id="Native" DependentVersion="v1.2.8" Optional="false"/>
+	</DependedModules>
+	<SubModules>
+		<SubModule>
+			<Name value="BannerRoyalMPLib" />
+			<DLLName value="BannerRoyalMPLib.dll" />
+			<SubModuleClassType value="BannerRoyalMPLib.SubModule" />
+		</SubModule>
+		<SubModule>
+			<Name value="BannerRoyalMP"/>
+			<DLLName value="BannerRoyalMPClient.dll"/>
+			<SubModuleClassType value="BannerRoyalMPClient.SubModule"/>
+		</SubModule>
+	</SubModules>
+	<Xmls>
+	    <XmlNode>
+          <XmlName id="GameText" path="multiplayer_strings"/>
+        </XmlNode>
+	</Xmls>
+</Module>

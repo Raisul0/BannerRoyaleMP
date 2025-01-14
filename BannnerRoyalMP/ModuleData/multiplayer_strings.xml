@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+    <string id="str_multiplayer_game_type.Warlords" text="{=*}Warlords" />
+    <string id="str_multiplayer_official_game_type_name.WLBattle" text="{=*}Battle" />
+    <string id="str_multiplayer_official_game_type_explainer.WLBattle" text="{=*}Create your character on website, customize your own character with skills and equipments. {newline} Engage in intense PvP battles across diverse landscapes." />
+
+    <string id="str_multiplayer_official_game_type_name.WLSiege" text="{=*}Siege" />
+    <string id="str_multiplayer_official_game_type_explainer.WLSiege" text="{=*}Create your character on website, customize your own character with skills and equipments. {newline} Experience the thrill of PvP siege warfare as you besiege or defend mighty fortresses against enemy players. {newline} Utilize siege engines, breach defenses, and lead your faction to victory." />
+
+    <string id="str_multiplayer_game_type.WLTeamDeathmatch" text="{=*}Warlords" />
+    <string id="str_multiplayer_official_game_type_name.WLTeamDeathmatch" text="{=*}Team Deathmatch (TDM)" />
+    <string id="str_multiplayer_official_game_type_explainer.WLTeamDeathmatch" text="{=*}Create your character on website, customize your own character with skills and equipments. {newline} Team up with allies and face off against enemy players in adrenaline-fueled combat." />
+</strings>

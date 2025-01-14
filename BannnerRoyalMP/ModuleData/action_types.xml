@@ -1,0 +1,8 @@
+﻿<action_types>
+  <action
+    name="act_taunt_congo" />
+	<action
+	  name="act_taunt_salsa" />
+	<action
+  name="act_taunt_flexing" />
+</action_types>

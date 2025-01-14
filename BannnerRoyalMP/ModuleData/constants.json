@@ -1,0 +1,23 @@
+{
+  "IronFleshMultiplier": 1,
+  "PowerStrikeMultiplier": 1,
+  "PowerDrawMultiplier": 1,
+  "ReloadingMultiplier": 1,
+  "ShieldMultiplier": 1,
+  "AthleticsMultiplier": 1,
+  "RidingMultiplier": 1,
+  "StrengthMultiplier": 1,
+  "AgilityMultiplier": 1,
+  "OneHandedMultiplier": 1,
+  "TwoHandedMultiplier": 1,
+  "BowMultiplier": 1,
+  "PolearmMultiplier": 1,
+  "ThrowingMultiplier": 1,
+  "IronFleshHealthMultiplier": 2, // Not divided by 100 every other divided by 100
+  "PowerStrikeDamageMultiplier": 8,
+  "PowerDrawDamageMultiplier": 8,
+  "PowerThrowDamageMultiplier": 8,
+  "AgilitySwingSpeedMultiplier": 0.5,
+  "ReloadingSpeedMultiplier": 50,
+  "AthleticsMovementSpeedMultiplier": 0.8
+}

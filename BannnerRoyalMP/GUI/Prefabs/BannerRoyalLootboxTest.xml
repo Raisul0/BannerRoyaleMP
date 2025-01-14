@@ -1,0 +1,38 @@
+<Prefab>
+	<Constants>
+	</Constants>
+
+	<Window>
+		<Widget IsVisible="@IsVisible" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="900" SuggestedHeight="370" HorizontalAlignment = "Center" VerticalAlignment="Center" Sprite="BlankWhiteSquare_9" AlphaFactor="0.7" Color="#000000FF">
+			<Children>
+				<BrushWidget Brush="Frame1.Border" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent">
+					<Children>
+						<BrushWidget WidthSizePolicy="StretchToParent" HeightSizePolicy="Fixed" SuggestedHeight="40" HorizontalAlignment="Center" VerticalAlignment="Top" >
+							<Children >
+								<Widget WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" Sprite="StdAssets\tabbar_long" ExtendBottom="50" >
+									<Children>
+										<TextWidget  WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"  Text = "Loot Box"/>
+									</Children>
+								</Widget>
+							</Children>
+						</BrushWidget>
+						<ListPanel	DataSource="{ChestItemsTopRow}" DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+									HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="50" MarginBottom="10" MarginLeft="10"
+								    StackLayout.LayoutMethod="HorizontalLeftToRight" >
+							<ItemTemplate>
+								<BannerRoyalItemTuple />
+							</ItemTemplate>
+						</ListPanel>
+						<ListPanel	DataSource="{ChestItemsBottomRow}" DoNotAcceptEvents="true" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent"
+									HorizontalAlignment="Center" VerticalAlignment="Top" MarginTop="205" MarginBottom="10" MarginLeft="10"
+								    StackLayout.LayoutMethod="HorizontalLeftToRight" >
+							<ItemTemplate>
+								<BannerRoyalItemTuple />
+							</ItemTemplate>
+						</ListPanel>
+					</Children>
+				</BrushWidget>
+			</Children>
+		</Widget>
+	</Window>
+</Prefab>

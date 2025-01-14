@@ -1,0 +1,37 @@
+﻿<Prefab>
+	<Window>
+		<BannerRoyalItemWidget DragWidget="DragWidget" MarginLeft="15" MarginTop="15">
+			<Children>
+
+				<Widget Id="DragWidget" IsVisible="false" WidthSizePolicy = "Fixed" HeightSizePolicy = "Fixed" SuggestedWidth = "128" SuggestedHeight = "60" HorizontalAlignment = "Left" VerticalAlignment="Top" Sprite="Inventory\portrait" DoNotPassEventsToChildren="true" IsDisabled="true">
+					<Children>
+						<ImageIdentifierWidget DataSource="{ImageIdentifier}" ImageId="@Id" AdditionalArgs="@AdditionalArgs" ImageTypeCode="@ImageTypeCode" WidthSizePolicy = "StretchToParent" HeightSizePolicy = "StretchToParent"  />
+					</Children>
+				</Widget>
+
+				<BrushWidget Brush="Frame1.Border" WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" >
+					<Children>
+						<Widget WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" Sprite="BlankWhiteSquare_9" AlphaFactor="0.4" Color="@TierColor" >
+							<Children>
+								<ButtonWidget   WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+												SuggestedWidth="130" SuggestedHeight="130"
+												HorizontalAlignment="Center" VerticalAlignment="Center"
+												MarginBottom="5"
+												Command.Click="ExecuteOnSelected" Command.HoverBegin="ExecuteBeginHint" Command.HoverEnd="ExecuteEndHint" >
+									<Children>
+										<ImageIdentifierWidget DataSource= "{ImageIdentifier}" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed"
+																SuggestedWidth="130" SuggestedHeight="76"
+																HorizontalAlignment="Center" VerticalAlignment="Center"
+																AdditionalArgs="@AdditionalArgs" ImageId="@Id" ImageTypeCode="@ImageTypeCode" DoNotAcceptEvents="true"/>
+
+									</Children>
+								</ButtonWidget>
+							</Children>
+						</Widget>
+					</Children>
+				</BrushWidget>
+
+			</Children>
+		</BannerRoyalItemWidget>
+	</Window>
+</Prefab>

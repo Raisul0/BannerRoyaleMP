@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<taunt_usage_sets>
+	<taunt_usage_set
+		id="taunt_01">
+		<taunt_usage
+			requires_bow="True"
+			requires_on_foot="True"
+			action="act_taunt_01_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			action="act_taunt_01_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			action="act_taunt_01" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_02">
+		<taunt_usage
+			requires_bow="True"
+			requires_on_foot="True"
+			action="act_taunt_02_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			action="act_taunt_02_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			action="act_taunt_02" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_03">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_03_leftstance" />
+		<taunt_usage
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_03" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_04">
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_04_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_04_leftstance" />
+		<taunt_usage
+			action="act_taunt_04" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_05">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_05_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_05" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_06">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_06_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_06" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_07">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_07_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_07" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_08">
+		<taunt_usage
+			is_left_stance="True"
+			requires_shield="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_08_leftstance" />
+		<taunt_usage
+			requires_shield="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_08" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_09">
+		<taunt_usage
+			is_left_stance="True"
+			requires_shield="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_09_leftstance" />
+		<taunt_usage
+			requires_shield="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_09" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_10">
+		<taunt_usage
+			requires_bow="True"
+			unsuitable_for_shield="True"
+			action="act_taunt_10_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_shield="True"
+			action="act_taunt_10_leftstance" />
+		<taunt_usage
+			unsuitable_for_shield="True"
+			action="act_taunt_10" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_11">
+		<taunt_usage
+			requires_bow="True"
+			unsuitable_for_shield="True"
+			action="act_taunt_11_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_shield="True"
+			action="act_taunt_11_leftstance" />
+		<taunt_usage
+			unsuitable_for_shield="True"
+			action="act_taunt_11" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_12">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_12_leftstance" />
+		<taunt_usage
+			unsuitable_for_two_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_12" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_13">
+		<taunt_usage
+			is_left_stance="True"
+			requires_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_13_leftstance" />
+		<taunt_usage
+			requires_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_13" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_14">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_14_leftstance" />
+		<taunt_usage
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_14" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_15">
+		<taunt_usage
+			requires_bow="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_15_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_15_leftstance" />
+		<taunt_usage
+			unsuitable_for_two_handed="True"
+			action="act_taunt_15" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_16">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_16_leftstance" />
+		<taunt_usage
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_16" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_17">
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_17_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_17_leftstance" />
+		<taunt_usage
+			action="act_taunt_17" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_18">
+		<taunt_usage
+			requires_bow="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_18_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_18_leftstance" />
+		<taunt_usage
+			unsuitable_for_two_handed="True"
+			action="act_taunt_18" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_19">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_19_leftstance" />
+		<taunt_usage
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_19" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_20">
+		<taunt_usage
+			requires_bow="True"
+			unsuitable_for_shield="True"
+			action="act_taunt_20_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_shield="True"
+			action="act_taunt_20_leftstance" />
+		<taunt_usage
+			unsuitable_for_shield="True"
+			action="act_taunt_20" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_21">
+		<taunt_usage
+			requires_bow="True"
+			requires_on_foot="True"
+			action="act_taunt_21_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			action="act_taunt_21_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			action="act_taunt_21" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_22">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_22_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_22" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_23">
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_23_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_23_leftstance" />
+		<taunt_usage
+			action="act_taunt_23" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_24">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_24_leftstance" />
+		<taunt_usage
+			unsuitable_for_bow="True"
+			action="act_taunt_24" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_25">
+		<taunt_usage
+			requires_on_foot="True"
+			requires_bow="True"
+			action="act_taunt_25_bow" />
+		<taunt_usage
+			requires_on_foot="True"
+			is_left_stance="True"
+			action="act_taunt_25_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			action="act_taunt_25" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_26">
+		<taunt_usage
+			requires_bow="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_26_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_26_leftstance" />
+		<taunt_usage
+			unsuitable_for_two_handed="True"
+			action="act_taunt_26" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_27">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_27_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_one_handed="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			unsuitable_for_crossbow="True"
+			unsuitable_for_empty="True"
+			action="act_taunt_27" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_28">
+		<taunt_usage
+			requires_bow="True"
+			requires_on_foot="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_28_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_28_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_two_handed="True"
+			action="act_taunt_28" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_29">
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_29_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_29_leftstance" />
+		<taunt_usage
+			action="act_taunt_29" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_30">
+		<taunt_usage
+			is_left_stance="True"
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_30_leftstance" />
+		<taunt_usage
+			unsuitable_for_shield="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_30" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_31">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			requires_shield="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_31_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			requires_shield="True"
+			unsuitable_for_two_handed="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_31" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_32">
+		<taunt_usage
+			is_left_stance="True"
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_32_leftstance" />
+		<taunt_usage
+			requires_on_foot="True"
+			unsuitable_for_bow="True"
+			action="act_taunt_32" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_33">
+		<taunt_usage
+			action="act_taunt_cheer_1" />
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_cheer_1_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_cheer_1_leftstance" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_34">
+		<taunt_usage
+			action="act_taunt_cheer_2" />
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_cheer_2_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_cheer_2_leftstance" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_35">
+		<taunt_usage
+			action="act_taunt_cheer_3" />
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_cheer_3_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_cheer_3_leftstance" />
+	</taunt_usage_set>
+	<taunt_usage_set
+		id="taunt_36">
+		<taunt_usage
+			action="act_taunt_cheer_4" />
+		<taunt_usage
+			requires_bow="True"
+			action="act_taunt_cheer_4_bow" />
+		<taunt_usage
+			is_left_stance="True"
+			action="act_taunt_cheer_4_leftstance" />
+	</taunt_usage_set>
+</taunt_usage_sets>
