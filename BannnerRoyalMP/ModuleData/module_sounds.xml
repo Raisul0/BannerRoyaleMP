@@ -49,8 +49,9 @@
 			path="chest_Sound.wav" />
 
 		<module_sound
-			name="TestSound"
+			name="taunt/test"
 			sound_category="mission_voice_shout"
+			is_2d="true"
 			path="khuzait_male_generic_101.ogg" />	
 	</module_sounds>
 </base>

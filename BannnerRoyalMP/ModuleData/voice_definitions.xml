@@ -20,6 +20,8 @@
 			name="MpDefend" />
 		<voice_type
 			name="MpAttack" />
+		<voice_type
+			name="CustomSound" />
 	</voice_type_declarations>
 	<voice_definition
 		name="male_04"
@@ -252,6 +254,11 @@
 			type="MpAttack"
 			path="TestSound"
 			face_anim="attack" />
+		<voice 
+			type="CustomSound"
+			path="TestSound/Test"
+			face_anim="attack"
+		/>
 	</voice_definition>
 	
 	
