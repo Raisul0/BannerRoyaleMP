@@ -263,6 +263,7 @@
     <Compile Include="BannerRoyalInventoryView.cs" />
     <Compile Include="BannerRoyalItemTupleWidget.cs" />
     <Compile Include="BannerRoyalMPVisualSpawnComponent.cs" />
+    <Compile Include="BannerRoyalShoutMenuView.cs" />
     <Compile Include="ClientAutoHandler.cs" />
     <Compile Include="Extensions\BoundaryZone\BoundaryZoneHandler.cs" />
     <Compile Include="Extensions\SpawnArmor\SpawnArmorHandler.cs" />

@@ -102,6 +102,8 @@
     <Compile Include="BannerRoyalMovies.cs" />
     <Compile Include="BannerRoyalMPGameMode.cs" />
     <Compile Include="BannerRoyalMPCommonBehavior.cs" />
+    <Compile Include="BannerRoyalShoutMenuVM.cs" />
+    <Compile Include="BannerRoyalShoutSlotVM.cs" />
     <Compile Include="BannerRoyalSpawnHelper.cs" />
     <Compile Include="BannerRoyalTauntMenuVM.cs" />
     <Compile Include="BannerRoyalTauntSlotVM.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="ButtonObjectVM.cs" />
     <Compile Include="CircleMenuItemVM.cs" />
     <Compile Include="GenericVM.cs" />
+    <Compile Include="Globals\BannerRoyalShoutWheel.cs" />
     <Compile Include="Globals\BannerRoyalTauntWheel.cs" />
     <Compile Include="Globals\CustomAgent.cs" />
     <Compile Include="Globals\ItemTiers.cs" />
@@ -119,13 +122,16 @@
     <Compile Include="ItemTiers.cs" />
     <Compile Include="LootChest.cs" />
     <Compile Include="NetworkMessages\FromClient\GetSpawnArmor.cs" />
+    <Compile Include="NetworkMessages\FromClient\StartShout.cs" />
     <Compile Include="NetworkMessages\FromClient\StartTaunt.cs" />
     <Compile Include="NetworkMessages\FromServer\StartSpawnArmor.cs" />
     <Compile Include="NetworkMessages\FromServer\SetBoundaryZone.cs" />
     <Compile Include="NetworkMessages\FromServer\StartSpawnChest.cs" />
     <Compile Include="NetworkMessages\FromClient\StartEquipItem.cs" />
     <Compile Include="ObjectClasses\BannerRoyalAgentBodyCosmetic.cs" />
+    <Compile Include="ObjectClasses\BannerRoyalShout.cs" />
     <Compile Include="ObjectClasses\BannerRoyalTaunt.cs" />
+    <Compile Include="ShoutBehavior.cs" />
     <Compile Include="SpawnedArmor.cs" />
     <Compile Include="SubModule.cs" />
     <Compile Include="ObjectClasses\LootChestObject.cs" />
