@@ -41,7 +41,8 @@ namespace BannerRoyalMPServer
                         new MissionScoreboardComponent(new FFAScoreboardData()),
                         new SpawnChestBehavior(),
                         new BoundaryZoneBehavior(),
-                        new TauntBehavior()
+                        new TauntBehavior(),
+                        new ShoutBehavior(),
                     };
                 }, true, true);
 

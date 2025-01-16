@@ -10,13 +10,15 @@ namespace BannerRoyalMPLib.NetworkMessages.FromClient
     public sealed class StartShout : GameNetworkMessage
     {
         public int ShoutIndex { get; set; }
+        public int AgentIndex { get; private set; }
         public NetworkCommunicator Player { get; set; }
         public StartShout()
         {
         }
-        public StartShout(int shoutIndex, NetworkCommunicator player)
+        public StartShout(int shoutIndex,int agent, NetworkCommunicator player)
         {
             ShoutIndex = shoutIndex;
+            AgentIndex = agent;    
             Player = player;
         }
         protected override MultiplayerMessageFilter OnGetLogFilter()
@@ -32,6 +34,7 @@ namespace BannerRoyalMPLib.NetworkMessages.FromClient
         protected override bool OnRead()
         {
             bool result = true;
+            this.AgentIndex = ReadAgentIndexFromPacket(ref result);
             this.ShoutIndex = ReadIntFromPacket(new CompressionInfo.Integer(-1, 5000, true), ref result);
             this.Player = ReadNetworkPeerReferenceFromPacket(ref result);
             return result;
@@ -40,6 +43,7 @@ namespace BannerRoyalMPLib.NetworkMessages.FromClient
         protected override void OnWrite()
         {
             WriteIntToPacket(ShoutIndex, new CompressionInfo.Integer(-1, 5000, true));
+            WriteAgentIndexToPacket(this.AgentIndex);
             WriteNetworkPeerReferenceToPacket(this.Player);
         }
     }

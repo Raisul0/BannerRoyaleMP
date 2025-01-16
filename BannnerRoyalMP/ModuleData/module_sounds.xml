@@ -52,6 +52,6 @@
 			name="taunt/test"
 			sound_category="mission_voice_shout"
 			is_2d="true"
-			path="khuzait_male_generic_101.ogg" />	
+			path="VictoryWillBeMine.ogg" />	
 	</module_sounds>
 </base>

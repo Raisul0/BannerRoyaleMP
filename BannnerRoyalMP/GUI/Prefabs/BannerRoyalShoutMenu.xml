@@ -42,13 +42,13 @@
 					  <!--Background-->
 					  <Widget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="459" SuggestedHeight="459" HorizontalAlignment="Center" VerticalAlignment="Center" Sprite="General\RadialMenu\radial_menu_bg" Color="#00000099"/>
 
-					  <CircleActionSelectorWidget DataSource="{TauntSlots}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Bottom" ActionContainer="ActionContainer" DistanceFromCenterModifier="160" DirectionWidget="..\DirectionWidget">
+					  <CircleActionSelectorWidget DataSource="{ShoutSlots}" WidthSizePolicy="StretchToParent" HeightSizePolicy="StretchToParent" HorizontalAlignment="Center" VerticalAlignment="Bottom" ActionContainer="ActionContainer" DistanceFromCenterModifier="160" DirectionWidget="..\DirectionWidget">
 						  <ItemTemplate>
 							  <ButtonWidget VisualDefinition="CircleGlow" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="117" SuggestedHeight="115" HorizontalAlignment="Center" VerticalAlignment="Center" Command.Click="ExecuteAction" IsSelected="@IsSelected" UpdateChildrenStates="true" Brush="Mission.Radial.Item.Glow">
 								  <Children>
 									  <ButtonWidget VisualDefinition="CircleBackground" WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="75" SuggestedHeight="74" HorizontalAlignment="Center" VerticalAlignment="Center" Command.Click="ExecuteAction" IsSelected="@IsSelected" UpdateChildrenStates="true" Brush="Mission.Radial.Item.Background">
 										  <Children>
-											  <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="100" HorizontalAlignment="Center" VerticalAlignment="Center" Command.Click="ExecuteAction" Brush="Mission.DropCircle.ItemText" Text="@TauntName" />
+											  <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="Fixed" SuggestedWidth="100" SuggestedHeight="100" HorizontalAlignment="Center" VerticalAlignment="Center" Command.Click="ExecuteAction" Brush="Mission.DropCircle.ItemText" Text="@ShoutName" />
 										  </Children>
 									  </ButtonWidget>
 								  </Children>
@@ -59,7 +59,7 @@
 
 					  <ListPanel WidthSizePolicy="CoverChildren" HeightSizePolicy="CoverChildren" HorizontalAlignment="Center" VerticalAlignment="Center" StackLayout.LayoutMethod="VerticalBottomToTop">
 						  <Children>
-							  <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="!Text.Width" Brush="Mission.DropCircle.ItemText" Text="Taunts" ClipContents="false"/>
+							  <TextWidget WidthSizePolicy="Fixed" HeightSizePolicy="CoverChildren" SuggestedWidth="!Text.Width" Brush="Mission.DropCircle.ItemText" Text="Shouts" ClipContents="false"/>
 						  </Children>
 					  </ListPanel>
 				  </Children>

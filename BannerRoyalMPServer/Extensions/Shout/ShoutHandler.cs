@@ -1,16 +1,19 @@
 ﻿using BannerRoyalMPLib;
 using BannerRoyalMPLib.Globals;
 using BannerRoyalMPLib.NetworkMessages.FromClient;
+using NetworkMessages.FromServer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Lobby.Armory;
+using static TaleWorlds.MountAndBlade.SkinVoiceManager;
 
-namespace BannerRoyalMPServer.Extensions.Taunt
+namespace BannerRoyalMPServer.Extensions.Shout
 {
     public class ShoutHandler : IHandlerRegister
     {
@@ -23,7 +26,9 @@ namespace BannerRoyalMPServer.Extensions.Taunt
         {
             var peer = baseMessage.Player;
             var shoutIndex = baseMessage.ShoutIndex;
-
+            var voiceType = BannerRoyalShoutWheel.Shouts.FirstOrDefault(x => x.ShoutIndex == shoutIndex)?.VoiceType ?? "CustomShout";
+            Agent agentFromIndex = Mission.MissionNetworkHelper.GetAgentFromIndex(baseMessage.AgentIndex, false);
+            agentFromIndex.MakeVoice(SkinVoiceManager.VoiceType.MpBarks[1], SkinVoiceManager.CombatVoiceNetworkPredictionType.OwnerPrediction);
 
             return true;
         }

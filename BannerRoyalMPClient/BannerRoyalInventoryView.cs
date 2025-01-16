@@ -1,4 +1,5 @@
 ﻿using BannerRoyalMPLib;
+using BannerRoyalMPLib.Globals;
 using BannerRoyalMPLib.NetworkMessages;
 using System.Collections.Generic;
 using System.Linq;
@@ -105,9 +106,6 @@ namespace BannerRoyalMPClient
             MissionScreen.AddLayer(_gauntletLayer);
             _gauntletLayer.InputRestrictions.SetInputRestrictions(true, InputUsageMask.All);
             _lootChest.StopSound();
-            var voiceType = SkinVoiceManager.VoiceType.MpBarks[1]; //new SkinVoiceType("CustomSound");
-
-            Agent.Main.MakeVoice(voiceType, SkinVoiceManager.CombatVoiceNetworkPredictionType.NoPrediction);
         }
 
         public void Hide()

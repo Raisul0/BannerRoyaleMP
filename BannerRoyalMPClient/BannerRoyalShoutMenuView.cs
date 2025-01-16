@@ -37,7 +37,7 @@ namespace BannerRoyal
         {
             base.OnBehaviorInitialize();
             _gauntletLayer = new GauntletLayer(ViewOrderPriority);
-            this._dataSource = new BannerRoyalTauntMenuVM();
+            this._dataSource = new BannerRoyalShoutMenuVM();
 
         }
 
@@ -52,7 +52,7 @@ namespace BannerRoyal
         public void Hide()
         {
             _gauntletLayer.ReleaseMovie(_movie);
-            _dataSource.ExecuteTaunt();
+            _dataSource.ExecuteShout();
             _gauntletLayer.InputRestrictions.SetInputRestrictions(false, InputUsageMask.Invalid);
             _visiable = false;
         }
@@ -92,6 +92,6 @@ namespace BannerRoyal
 
         private GauntletLayer _gauntletLayer;
         private IGauntletMovie _movie;
-        private BannerRoyalTauntMenuVM _dataSource;
+        private BannerRoyalShoutMenuVM _dataSource;
     }
 }

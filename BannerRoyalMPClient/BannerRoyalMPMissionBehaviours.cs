@@ -26,6 +26,7 @@ namespace BannerRoyalMPClient
                     new BannerRoyalMPVisualSpawnComponent(),
                     new BoundaryZoneBehavior(),
                     new TauntBehavior(),
+                    new ShoutBehavior(),
 
                     // Native behaviors
                     new MultiplayerTimerComponent(),

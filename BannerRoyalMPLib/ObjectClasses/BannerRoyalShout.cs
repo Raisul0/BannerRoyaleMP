@@ -8,13 +8,15 @@ namespace BannerRoyalMPLib.ObjectClasses
 {
     public class BannerRoyalShout
     {
-        public BannerRoyalShout(int shoutIndex, string shoutName)
+        public BannerRoyalShout(int shoutIndex, string shoutName, string voiceType)
         {
             ShoutIndex = shoutIndex;
             ShoutName = shoutName;
+            VoiceType = voiceType;
         }
 
         public int ShoutIndex { get; set; }
         public string ShoutName { get; set; }
+        public string VoiceType { get; set;}
     }
 }

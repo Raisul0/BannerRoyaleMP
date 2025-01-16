@@ -64,7 +64,7 @@ namespace BannerRoyalMPLib
                 if (GameNetwork.IsClient)
                 {
                     GameNetwork.BeginModuleEventAsClient();
-                    GameNetwork.WriteMessage(new StartShout(shoutIndex, GameNetwork.MyPeer));
+                    GameNetwork.WriteMessage(new StartShout(shoutIndex,Agent.Main.Index, GameNetwork.MyPeer));
                     GameNetwork.EndModuleEventAsClient();
                 }
             }
