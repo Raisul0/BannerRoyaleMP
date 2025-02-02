@@ -266,6 +266,7 @@
     <Compile Include="BannerRoyalShoutMenuView.cs" />
     <Compile Include="ClientAutoHandler.cs" />
     <Compile Include="Extensions\BoundaryZone\BoundaryZoneHandler.cs" />
+    <Compile Include="Extensions\Shout\AgentShoutTextDisplayHandler.cs" />
     <Compile Include="Extensions\Shout\AgentShoutHandler.cs" />
     <Compile Include="Extensions\SpawnArmor\SpawnArmorHandler.cs" />
     <Compile Include="Extensions\SpawnChest\SpawnChestHandler.cs" />

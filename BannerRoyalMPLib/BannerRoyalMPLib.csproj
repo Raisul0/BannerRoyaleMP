@@ -125,6 +125,7 @@
     <Compile Include="NetworkMessages\FromClient\StartShout.cs" />
     <Compile Include="NetworkMessages\FromClient\StartTaunt.cs" />
     <Compile Include="NetworkMessages\FromServer\AgentShout.cs" />
+    <Compile Include="NetworkMessages\FromServer\AgentShoutTextDisplay.cs" />
     <Compile Include="NetworkMessages\FromServer\StartSpawnArmor.cs" />
     <Compile Include="NetworkMessages\FromServer\SetBoundaryZone.cs" />
     <Compile Include="NetworkMessages\FromServer\StartSpawnChest.cs" />

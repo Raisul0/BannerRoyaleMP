@@ -1,6 +1,7 @@
 ﻿using BannerRoyalMPLib;
 using BannerRoyalMPLib.Globals;
 using BannerRoyalMPLib.NetworkMessages.FromClient;
+using BannerRoyalMPLib.NetworkMessages.FromServer;
 using NetworkMessages.FromServer;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace BannerRoyalMPServer.Extensions.Shout
             if (GameNetwork.IsMultiplayer)
             {
                 GameNetwork.BeginBroadcastModuleEvent();
-                GameNetwork.WriteMessage(new BarkAgent(networkPeer.ControlledAgent.Index, 1));
+                GameNetwork.WriteMessage(new AgentShoutTextDisplay(networkPeer.ControlledAgent.Index, voiceType));
                 GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.ExcludeOtherTeamPlayers, networkPeer);
             }
 
