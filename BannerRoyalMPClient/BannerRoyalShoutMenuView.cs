@@ -1,4 +1,5 @@
 ﻿using BannerRoyalMPLib;
+using BannerRoyalMPLib.Globals;
 using NetworkMessages.FromClient;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,11 @@ namespace BannerRoyal
         {
             _gauntletLayer.ReleaseMovie(_movie);
             _dataSource.ExecuteShout();
+
+            var voiceType = "CustomShout";
+            Agent.Main.MakeVoice(new SkinVoiceManager.SkinVoiceType(voiceType), SkinVoiceManager.CombatVoiceNetworkPredictionType.OwnerPrediction);
+
+
             _gauntletLayer.InputRestrictions.SetInputRestrictions(false, InputUsageMask.Invalid);
             _visiable = false;
         }

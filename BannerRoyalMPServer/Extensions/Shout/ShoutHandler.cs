@@ -27,8 +27,14 @@ namespace BannerRoyalMPServer.Extensions.Shout
             var peer = baseMessage.Player;
             var shoutIndex = baseMessage.ShoutIndex;
             var voiceType = BannerRoyalShoutWheel.Shouts.FirstOrDefault(x => x.ShoutIndex == shoutIndex)?.VoiceType ?? "CustomShout";
-            Agent agentFromIndex = Mission.MissionNetworkHelper.GetAgentFromIndex(baseMessage.AgentIndex, false);
-            agentFromIndex.MakeVoice(SkinVoiceManager.VoiceType.MpBarks[1], SkinVoiceManager.CombatVoiceNetworkPredictionType.OwnerPrediction);
+            networkPeer.ControlledAgent.MakeVoice(new SkinVoiceType(voiceType), SkinVoiceManager.CombatVoiceNetworkPredictionType.OwnerPrediction);
+
+            if (GameNetwork.IsMultiplayer)
+            {
+                GameNetwork.BeginBroadcastModuleEvent();
+                GameNetwork.WriteMessage(new BarkAgent(networkPeer.ControlledAgent.Index, 1));
+                GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.ExcludeOtherTeamPlayers, networkPeer);
+            }
 
             return true;
         }
